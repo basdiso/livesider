@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { Image } from 'astro:assets';
+import { meta, t } from '../../data/i18n';
+import kozmetikImg from '../../assets/kozmetik.jpg';
+import modaImg from '../../assets/moda.jpg';
+import mucevherImg from '../../assets/mucevher.jpg';
+import koleksiyonImg from '../../assets/koleksiyon.jpg';
+import '../../styles/ornekler.css';
+
+const locale = 'en' as const;
+const page = meta.ornekler;
+---
+<Base locale={locale} pageKey="ornekler" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero show-hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Channel showcase</span>
+          <h1>Every sector has its <em>own</em> on-air language.</h1>
+        </div>
+        <div class="side">
+          <p>Skin texture in beauty, the movement of fabric in fashion, the light in a stone. Each example shows what's on air side by side with the backstage that makes it possible.</p>
+          <nav class="jump" aria-label="Sectors">
+            <a href="#kozmetik">Beauty</a>
+            <a href="#moda">Fashion</a>
+            <a href="#mucevher">Fine jewelry</a>
+            <a href="#koleksiyon">Collectibles</a>
+          </nav>
+          <span class="disclaimer">Brands and shows are concept examples, made to show what your channel could look like.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mstrip">
+      <div class="wrap">
+        <span class="n">30</span>
+        <p>Every show goes out to up to 30 platforms at once, alongside the brand's own site and app.</p>
+        <a href="/en#coklu-yayin">How multistreaming works</a>
+      </div>
+    </div>
+
+    <section class="show" id="kozmetik">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Beauty · skincare</span>
+            <h2>Skin Ritual <span class="brand">· Velare</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Tue 20:00</span><span>30 min · weekly</span><span>Mid-size studio</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={kozmetikImg} alt="Velare Skin Ritual live broadcast: two hosts present a serum with a macro skin close-up and price card in the corner; backstage with control room and makeup on the right" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="eager" />
+          <figcaption><a href="/img/kozmetik.jpg" target="_blank" rel="noopener">Full size</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>A weekly skincare show with an expert and a guest host. Each episode covers one product and one routine; viewer questions are answered on air.</p></div>
+          <div class="onair"><span class="k">On air</span><ul><li>Macro insert camera showing texture</li><li>Product and price card, one tap to cart</li><li>Episode lower third</li></ul></div>
+          <div><span class="k">Backstage</span><ul><li>Macro product camera on a slider</li><li>Multiview control room and switcher</li><li>On-set makeup and product table</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="moda">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Fashion · ready-to-wear</span>
+            <h2>New Season Edit <span class="brand">· Maison Éla</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Thu 19:00</span><span>45 min · seasonal series</span><span>Large studio</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={modaImg} alt="Maison Éla New Season Edit live broadcast: a stylist narrates while a model walks in a linen dress, product card on screen; multi-camera studio, control room and wardrobe prep on the right" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/moda.jpg" target="_blank" rel="noopener">Full size</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>A seasonal show where a stylist presents while a model walks live. Fabric movement and styling advice deliver what a static catalog photo can't.</p></div>
+          <div class="onair"><span class="k">On air</span><ul><li>Mini runway and curved backdrop</li><li>Product card with size selection</li><li>Season and episode lower third</li></ul></div>
+          <div><span class="k">Backstage</span><ul><li>Three cameras, softboxes and parabolic lights</li><li>Control room and audio desk, two operators</li><li>Wardrobe, steaming and makeup area</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="mucevher">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Fine jewelry · diamonds</span>
+            <h2>Diamond Hour <span class="brand">· Luméa</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Fri 21:00</span><span>40 min · weekly</span><span>Mid-size studio</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={mucevherImg} alt="Luméa Diamond Hour live broadcast: an expert and guest examine a solitaire ring with a macro stone close-up and carat-price card in the corner; macro product table, control room and gloved product handling on the right" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/mucevher.jpg" target="_blank" rel="noopener">Full size</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>Choosing stones and settings with an expert. For high-value products, trust is built on screen with close-ups, clear information and a calm conversational tone.</p></div>
+          <div class="onair"><span class="k">On air</span><ul><li>Macro stone shot that catches the light</li><li>Product card with carat and price</li><li>Low, warm, controlled lighting</li></ul></div>
+          <div><span class="k">Backstage</span><ul><li>Light tent, turntable and macro camera</li><li>Multiview control room</li><li>Safe and gloved product handling</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="koleksiyon">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Collectibles · prayer beads and watches</span>
+            <h2>Collector's Table <span class="brand">· Novar</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Sun 20:30</span><span>60 min · live auction</span><span>Compact · one room</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={koleksiyonImg} alt="Novar Collector's Table live broadcast: two collectors present amber prayer beads and a watch with a macro amber close-up and price card in the corner; macro shooting on a light box, compact control room and set prep on the right" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/koleksiyon.jpg" target="_blank" rel="noopener">Full size</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>A community show where collectors talk, tell the story behind each piece and sell through a live auction. It can run in a single room with a small crew.</p></div>
+          <div class="onair"><span class="k">On air</span><ul><li>Macro shot revealing the amber's interior</li><li>Live bid and price card</li><li>Warm set in wood and brass tones</li></ul></div>
+          <div><span class="k">Backstage</span><ul><li>Macro shooting on a light box</li><li>Compact control room, two monitors</li><li>Pre-show set and host prep</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta show-cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">Make the next example your channel</span>
+        <h2>Let's design a pilot episode for your brand.</h2>
+        <p>Tell us about your sector and your space, and we'll plan a format, set and backstage tailored to you.</p>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+</Base>

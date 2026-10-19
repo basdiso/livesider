@@ -1,0 +1,15 @@
+---
+import { footer, t } from '../data/i18n';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+<footer>
+  <div class="wrap">
+    <span>© 2026 LIVESIDER</span>
+    <span>{t(footer.tagline, locale)}</span>
+  </div>
+</footer>

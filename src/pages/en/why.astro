@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { meta, t } from '../../data/i18n';
+import '../../styles/neden.css';
+
+const locale = 'en' as const;
+const page = meta.neden;
+---
+<Base locale={locale} pageKey="neden" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero why">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Why your own channel</span>
+          <h1 style="margin-top:18px">On social media you <em>rent.</em> On your own channel you own.</h1>
+        </div>
+        <div class="side">
+          <p>Your followers, your reach and even your account depend on the platform's rules. Your own channel is where the brand builds a direct, uninterrupted and measurable relationship with its audience. Social media becomes the shop window for that channel, not a replacement for it.</p>
+          <div class="quote">The point of a channel is not views. It turns viewers into customers, and customers into a community.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rent">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rent"><span class="kicker">01</span>The difference between renting and owning</h2>
+          <p>A social account and an owned channel both publish video. The difference is who keeps the audience, the data and the sale.</p>
+        </div>
+        <div class="tbl-scroll">
+          <table class="cmp">
+            <thead><tr><th scope="col"></th><th scope="col">Social media account</th><th scope="col" class="own-col">The brand's own channel</th></tr></thead>
+            <tbody>
+              <tr><td>Audience</td><td>The platform's. The algorithm decides who sees what, and when.</td><td class="own">The brand's. Reached directly through sign-ups, notifications and email.</td></tr>
+              <tr><td>Data</td><td>Summary statistics. Who the viewer is mostly stays hidden.</td><td class="own">First-party data: who watched, how long they stayed, what they clicked, what they bought.</td></tr>
+              <tr><td>Format</td><td>Short vertical content gets rewarded. Long-form storytelling gets buried.</td><td class="own">Whatever the product needs: a 60-minute live, a 3-minute demo, a recurring series.</td></tr>
+              <tr><td>Sales</td><td>A commission-based platform shop, or a click out to the website.</td><td class="own">Inside the broadcast: product cards, cart, appointments, quote requests.</td></tr>
+              <tr><td>Archive</td><td>Lost in the feed. If the account closes, everything goes.</td><td class="own">A searchable library. Every broadcast becomes a lasting asset.</td></tr>
+              <tr><td>Perception</td><td>Competes in the same feed as rivals and entertainment.</td><td class="own">The brand's own studio and schedule. It looks like an institution.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-hub">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-hub"><span class="kicker">02</span>Social media feeds the channel</h2>
+          <p>An owned channel doesn't mean leaving social media. It builds a hub that supplies social media with steady, high-quality content every week.</p>
+        </div>
+        <div>
+          <div class="flow">
+            <div class="fnode"><span class="k">SOURCE</span><span class="big">60 min</span><h3>One live broadcast</h3><p>A weekly studio show, a launch or an expert conversation.</p></div>
+            <div class="fnode"><span class="k">MULTIPLY</span><span class="big">×15</span><h3>Short clips</h3><p>The strongest moments are cut, subtitled and reframed vertically.</p></div>
+            <div class="fnode"><span class="k">DISTRIBUTE</span><span class="big">4+</span><h3>Social platforms</h3><p>Instagram, YouTube, LinkedIn and more. Every clip points back to the full show.</p></div>
+            <div class="fnode home"><span class="k">HOME</span><span class="big">1</span><h3>Owned channel and app</h3><p>Here the viewer signs up, examines the product, buys or books an appointment.</p></div>
+          </div>
+          <div class="flow-return">The data collected shapes the next broadcast</div>
+        </div>
+        <p class="note">Instead of creating social content from scratch every week, one strong broadcast yields a week of posts. Ad budgets go to clips that drive traffic to the channel, not to one-off posts.</p>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-world">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-world"><span class="kicker">03</span>Live commerce worldwide</h2>
+          <p>Selling through live video became one of the main engines of e-commerce in China, and it is growing fast in the US and Europe. The numbers say one thing: a live presentation sells far better than a static product page.</p>
+        </div>
+        <div class="stats">
+          <div class="stat hl"><span class="v">$807<small>billion</small></span><p>China's livestream e-commerce sales in 2024. Livestreaming drove an estimated 80% of the sector's incremental growth.</p><span class="src">USDA ATO SHANGHAI · iRESEARCH <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat"><span class="v">833<small>million</small></span><p>Livestream users in China (December 2024), about 75% of the country's internet users.</p><span class="src">USDA ATO SHANGHAI <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat hl"><span class="v">~30%</span><p>Live commerce conversion rates, up to ten times conventional e-commerce. German beauty retailer Douglas reports rates of up to 40%.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+          <div class="stat"><span class="v">$8<small>billion+</small></span><p>Whatnot's live sales volume in 2025, up from over $3 billion in 2024. The company reached a $20 billion valuation in August 2026.</p><span class="src">VALUE ADDED RESOURCE <sup><a href="#k3">[3]</a></sup></span></div>
+          <div class="stat"><span class="v">$15.1<small>billion</small></span><p>TikTok Shop's US sales volume in 2025, up 68% in a year. Live's share rose from 10% to 14%.</p><span class="src">MOMENTUM WORKS <sup><a href="#k4">[4]</a></sup></span></div>
+          <div class="stat"><span class="v">×7</span><p>Walmart's first live shopping pilot drew seven times the expected audience and grew its follower base by 25%.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-models">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-models"><span class="kicker">04</span>Business models that changed the game</h2>
+          <p>Live selling is not one model. The successful examples worldwide follow five different paths, and each one teaches a brand something.</p>
+        </div>
+        <div class="models">
+          <article class="model">
+            <div class="who"><h3>Taobao Live · Douyin</h3><span>China · super app</span></div>
+            <p>Video, chat, cart and payment on one screen. Viewers buy without leaving the stream. Taobao Live saw $7.5 billion in transactions in the first half hour of 2020 Singles' Day presales.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>LESSON</b>Every step between watching and buying loses a sale.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Whatnot</h3><span>US · community marketplace</span></div>
+            <p>Live auctions in passionate niches like trading cards, toys and secondhand goods. The seller becomes a host and shopping becomes an event. It claims about 60% of the live shopping market across North America and Europe.<sup><a href="#k3">[3]</a></sup></p>
+            <p class="lesson"><b>LESSON</b>A community built on expertise and passion outsells any discount.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Red Bull Media House</h3><span>Austria · brand as publisher</span></div>
+            <p>A drinks brand built its own film, TV, magazine and digital media company. It tells the story of the product's world rather than the product, and the content became an asset watched and licensed on its own.</p>
+            <p class="lesson"><b>LESSON</b>Viewers skip ads, but they look for good shows.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Douglas · Walmart</h3><span>Retail · owned channel</span></div>
+            <p>Major retailers moved live video onto their own sites and apps: a product expert presents live, answers questions, and viewers add to cart on the same screen. Douglas reports conversion of up to 40%.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>LESSON</b>A great in-store advisor can reach thousands at once on screen.</p>
+          </article>
+          <article class="model wide">
+            <div class="who"><h3>QVC · HSN</h3><span>Since the 1980s · TV shopping</span></div>
+            <p>Selling on live video is not new. TV shopping channels have used the same formula for decades: a trusted host, close-ups of the product, limited stock and an order-now moment. What changed is the technology. Today the same formula runs inside the brand's own app instead of a satellite channel, at a fraction of the cost and with two-way interaction.</p>
+            <p class="lesson"><b>LESSON</b>A proven formula now meets new, affordable infrastructure. That is where the opportunity lies.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rundown">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rundown"><span class="kicker">05</span>A sample weekly schedule</h2>
+          <p>A channel works when it is regular. This schedule is a starting point that adapts to any sector and runs on a few studio hours a week.</p>
+        </div>
+        <div class="rundown" role="table" aria-label="Rundown">
+          <div class="rd-head" role="row"><span role="columnheader">Day</span><span role="columnheader">Format</span><span role="columnheader">Content</span><span role="columnheader">Goal</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">MON 20:00</span><h3 role="cell">Launch of the week</h3><p role="cell">A new product or collection is shown live; viewers ask questions and limited first orders are taken on air.</p><span class="goal" role="cell">Sales · conversion</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">TUE</span><h3 role="cell">Behind the making</h3><p role="cell">Workshop, factory or kitchen: a short documentary showing how the product is made and the craft behind it.</p><span class="goal" role="cell">Trust · perceived value</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">WED 21:00</span><h3 role="cell">Expert talk</h3><p role="cell">A 30-minute conversation with an industry guest: trends, how to choose well, common mistakes.</p><span class="goal" role="cell">Authority · search</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">THU</span><h3 role="cell">Customer story</h3><p role="cell">A real customer's connection with the product; with consent, short and sincere.</p><span class="goal" role="cell">Social proof</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">FRI 19:00</span><h3 role="cell">Live Q&amp;A</h3><p role="cell">Questions from the week are answered live: care, use, pricing and offers.</p><span class="goal" role="cell">Community · loyalty</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">DAILY</span><h3 role="cell">Clips</h3><p role="cell">Short clips cut from the week's shows go out on social media and lead back to the channel.</p><span class="goal" role="cell">Reach · traffic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-next">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-next"><span class="kicker">06</span>The next phase of digital marketing</h2>
+          <p>The trends shaping marketing in the coming years all point the same way: the brand that owns its data, its content and its audience wins.</p>
+        </div>
+        <div class="next">
+          <div class="nx"><h3>First-party data is gold</h3><p>As cookies and third-party tracking fade, brands that know customers directly buy ads more precisely and more cheaply. An owned channel collects that data naturally.</p></div>
+          <div class="nx"><h3>AI multiplies content</h3><p>Automatic editing, subtitles and translation can turn one broadcast into dozens of clips, languages and platforms in minutes.</p></div>
+          <div class="nx"><h3>Search is moving to video and AI</h3><p>People now ask their questions on video platforms and AI assistants. Regular expert content in plain language makes a brand visible in these new kinds of search.</p></div>
+          <div class="nx"><h3>Trust is the new currency of sales</h3><p>Real people, the real product and live questions instead of flawless ad imagery. Live video conveys an honesty that can't be staged.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">To get started</span>
+        <h2>Let's design your channel together.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="h-src">
+      <div class="wrap">
+        <span class="eyebrow" id="h-src">Sources</span>
+        <ol>
+          <li id="k1"><a href="https://chilealimentos.com/wp-content/uploads/2025/12/Selling-in-China-The-Rise-of-Livestreaming-E-commerce_Shanghai-ATO_China-Peoples-Republic-of_CH2025-0229.pdf" target="_blank" rel="noopener">USDA ATO Shanghai — Selling in China: The Rise of Livestreaming E-commerce (2025)</a></li>
+          <li id="k2"><a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/its-showtime-how-live-commerce-is-transforming-the-shopping-experience" target="_blank" rel="noopener">McKinsey — It's showtime! How live commerce is transforming the shopping experience</a></li>
+          <li id="k3"><a href="https://valueaddedresource.net/whatnot-20-billion-valuation/" target="_blank" rel="noopener">Value Added Resource — Whatnot Raises $545 Million At $20 Billion Valuation (2026)</a></li>
+          <li id="k4"><a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank" rel="noopener">Momentum Works — TikTok Shop U.S. GMV grew 68% to reach US$15.1B in 2025</a></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</Base>

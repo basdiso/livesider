@@ -1,0 +1,172 @@
+---
+import Base from '../layouts/Base.astro';
+import MailBlock from '../components/MailBlock.astro';
+import { meta, t } from '../data/i18n';
+import '../styles/neden.css';
+
+const locale = 'tr' as const;
+const page = meta.neden;
+---
+<Base locale={locale} pageKey="neden" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero why">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Neden kendi kanalınız</span>
+          <h1 style="margin-top:18px">Sosyal medyada <em>kiracısınız.</em> Kendi kanalınızda ev sahibi.</h1>
+        </div>
+        <div class="side">
+          <p>Takipçileriniz, erişiminiz ve hatta hesabınız platformun kurallarına bağlı. Kendi yayın kanalı, markanın izleyicisiyle doğrudan, kesintisiz ve ölçülebilir bir ilişki kurduğu yerdir. Sosyal medya bu kanalın vitrini olur, yerini almaz.</p>
+          <div class="quote">Kanalın amacı izlenmek değil; izleyiciyi müşteriye, müşteriyi topluluğa çevirmektir.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rent">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rent"><span class="kicker">01</span>Kira ile mülk arasındaki fark</h2>
+          <p>Sosyal medya hesabı da, kendi kanal da video yayınlar. Aradaki fark, kitlenin, verinin ve satışın kimin elinde kaldığıdır.</p>
+        </div>
+        <div class="tbl-scroll">
+          <table class="cmp">
+            <thead><tr><th scope="col"></th><th scope="col">Sosyal medya hesabı</th><th scope="col" class="own-col">Markanın kendi kanalı</th></tr></thead>
+            <tbody>
+              <tr><td>Kitle</td><td>Platformun. Kim, ne zaman, ne kadar görecek algoritma karar verir.</td><td class="own">Markanın. Üyelik, bildirim ve e-posta ile doğrudan ulaşılır.</td></tr>
+              <tr><td>Veri</td><td>Özet istatistikler. İzleyicinin kim olduğu çoğunlukla görünmez.</td><td class="own">Birinci taraf veri: kim izledi, ne kadar kaldı, neye tıkladı, ne aldı.</td></tr>
+              <tr><td>Format</td><td>Kısa ve dikey içerik ödüllendirilir. Uzun anlatım cezalandırılır.</td><td class="own">Ürün ne gerektiriyorsa: 60 dakikalık canlı, 3 dakikalık tanıtım, seri programlar.</td></tr>
+              <tr><td>Satış</td><td>Komisyonlu platform mağazası ya da linke tıklayıp siteye geçiş.</td><td class="own">Yayının içinde: ürün kartı, sepet, randevu, teklif isteği.</td></tr>
+              <tr><td>Arşiv</td><td>Akışta kaybolur. Hesap kapanırsa her şey gider.</td><td class="own">Aranabilir bir kütüphane. Her yayın kalıcı bir varlığa dönüşür.</td></tr>
+              <tr><td>Marka algısı</td><td>Rakiplerle ve eğlence içerikleriyle aynı akışta yarışır.</td><td class="own">Markanın kendi stüdyosu, kendi yayın kuşağı. Kurum olarak görünür.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-hub">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-hub"><span class="kicker">02</span>Sosyal medya kanalı besler</h2>
+          <p>Kendi kanal, sosyal medyayı bırakmak anlamına gelmez. Tersine, sosyal medyaya her hafta düzenli ve kaliteli içerik üreten bir merkez kurar.</p>
+        </div>
+        <div>
+          <div class="flow">
+            <div class="fnode"><span class="k">KAYNAK</span><span class="big">60 dk</span><h3>Bir canlı yayın</h3><p>Stüdyoda çekilen haftalık program, lansman ya da uzman sohbeti.</p></div>
+            <div class="fnode"><span class="k">ÇOĞALTMA</span><span class="big">×15</span><h3>Kısa videolar</h3><p>En güçlü anlar kesilir, altyazılanır, dikey formata çevrilir.</p></div>
+            <div class="fnode"><span class="k">DAĞITIM</span><span class="big">4+</span><h3>Sosyal platformlar</h3><p>Instagram, YouTube, LinkedIn ve diğerleri. Her klip izleyiciyi tam yayına çağırır.</p></div>
+            <div class="fnode home"><span class="k">EV</span><span class="big">1</span><h3>Kendi kanal ve uygulama</h3><p>İzleyici burada üye olur, ürünü inceler, satın alır ya da randevu ister.</p></div>
+          </div>
+          <div class="flow-return">Toplanan veri bir sonraki yayının konusunu belirler</div>
+        </div>
+        <p class="note">Sosyal medyada her hafta sıfırdan içerik üretmek yerine, tek bir güçlü yayından bir haftalık içerik akışı çıkar. Reklam bütçesi de keyfi gönderilere değil, kanala trafik getiren kliplere harcanır.</p>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-world">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-world"><span class="kicker">03</span>Dünyada live commerce</h2>
+          <p>Canlı yayınla satış, Çin'de e-ticaretin ana motorlarından biri oldu; ABD ve Avrupa'da da hızla büyüyor. Rakamlar tek bir şey söylüyor: canlı anlatım, statik ürün sayfasından çok daha iyi satıyor.</p>
+        </div>
+        <div class="stats">
+          <div class="stat hl"><span class="v">$807<small>milyar</small></span><p>Çin'de 2024'te canlı yayın üzerinden yapılan e-ticaret satışı. Canlı yayın, sektördeki ek büyümenin tahminen %80'ini sağladı.</p><span class="src">USDA ATO SHANGHAI · iRESEARCH <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat"><span class="v">833<small>milyon</small></span><p>Çin'de canlı yayın izleyen internet kullanıcısı (Aralık 2024), yani internet kullanıcılarının %75'i.</p><span class="src">USDA ATO SHANGHAI <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat hl"><span class="v">~%30</span><p>Live commerce dönüşüm oranı; klasik e-ticaretin on katına kadar. Alman kozmetik zinciri Douglas %40'a varan oranlar bildiriyor.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+          <div class="stat"><span class="v">$8<small>milyar+</small></span><p>Whatnot'un 2025 canlı satış hacmi. 2024'te 3 milyar doların üzerindeydi; şirket Ağustos 2026'da 20 milyar dolar değerlemeye ulaştı.</p><span class="src">VALUE ADDED RESOURCE <sup><a href="#k3">[3]</a></sup></span></div>
+          <div class="stat"><span class="v">$15,1<small>milyar</small></span><p>TikTok Shop'un 2025 ABD satış hacmi, bir yılda %68 artış. Canlı yayının payı %10'dan %14'e çıktı.</p><span class="src">MOMENTUM WORKS <sup><a href="#k4">[4]</a></sup></span></div>
+          <div class="stat"><span class="v">×7</span><p>Walmart'ın ilk canlı alışveriş denemesi, beklenenin yedi katı izleyici çekti ve takipçi sayısını %25 artırdı.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-models">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-models"><span class="kicker">04</span>Fark yaratan iş modelleri</h2>
+          <p>Canlı yayınla satış tek bir model değil. Dünyada başarılı olan örnekler beş farklı yoldan gidiyor ve her birinin bir markaya öğrettiği bir şey var.</p>
+        </div>
+        <div class="models">
+          <article class="model">
+            <div class="who"><h3>Taobao Live · Douyin</h3><span>Çin · süper uygulama</span></div>
+            <p>Video, sohbet, sepet ve ödeme tek ekranda. İzleyici yayından çıkmadan satın alıyor. Taobao Live, 2020 Bekarlar Günü ön satışının ilk yarım saatinde 7,5 milyar dolarlık işlem gördü.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>DERS</b>İzlemek ile satın almak arasındaki her adım, satış kaybıdır.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Whatnot</h3><span>ABD · topluluk pazaryeri</span></div>
+            <p>Koleksiyon kartları, oyuncak ve ikinci el gibi tutkulu nişlerde canlı açık artırma. Satıcı bir yayıncıya, alışveriş bir etkinliğe dönüşüyor. Kuzey Amerika ve Avrupa'daki canlı alışveriş pazarının yaklaşık %60'ını elinde tuttuğunu söylüyor.<sup><a href="#k3">[3]</a></sup></p>
+            <p class="lesson"><b>DERS</b>Uzmanlık ve tutku etrafında kurulan topluluk, indirimden daha güçlü satar.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Red Bull Media House</h3><span>Avusturya · marka = yayıncı</span></div>
+            <p>Bir içecek markası, kendi film, TV, dergi ve dijital yayın şirketini kurdu. Ürünü değil, ürünün dünyasını anlatıyor; içerik kendi başına izlenen ve lisanslanan bir varlık oldu.</p>
+            <p class="lesson"><b>DERS</b>İzleyici reklamı atlar, ama iyi programı arar.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Douglas · Walmart</h3><span>Perakende · kendi kanal</span></div>
+            <p>Büyük perakendeciler canlı yayını kendi sitelerine ve uygulamalarına taşıdı: ürün uzmanı canlı anlatıyor, soruları yanıtlıyor, izleyici aynı ekranda sepete ekliyor. Douglas %40'a varan dönüşüm bildiriyor.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>DERS</b>Mağazadaki iyi satış danışmanı, ekranda binlerce kişiye aynı anda ulaşabilir.</p>
+          </article>
+          <article class="model wide">
+            <div class="who"><h3>QVC · HSN</h3><span>1980'lerden beri · TV alışverişi</span></div>
+            <p>Canlı yayınla satış yeni bir fikir değil. Televizyon alışveriş kanalları onlarca yıldır aynı formülle çalışıyor: güvenilir sunucu, ürünün yakın planı, sınırlı stok ve hemen sipariş. Değişen şey teknoloji. Bugün aynı formül, bir uydu kanalı yerine markanın kendi uygulamasında, çok daha düşük maliyetle ve izleyiciyle iki yönlü iletişimle kurulabiliyor.</p>
+            <p class="lesson"><b>DERS</b>Kanıtlanmış formül, yeni ve ulaşılabilir altyapıyla buluşuyor. Fırsat da tam burada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rundown">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rundown"><span class="kicker">05</span>Bir haftalık yayın akışı örneği</h2>
+          <p>Kanal, düzenli olduğu sürece işe yarar. Aşağıdaki akış; her sektöre uyarlanabilecek, haftada birkaç saatlik stüdyo kullanımıyla dönen bir başlangıç önerisi.</p>
+        </div>
+        <div class="rundown" role="table" aria-label="Yayın akışı">
+          <div class="rd-head" role="row"><span role="columnheader">Gün</span><span role="columnheader">Format</span><span role="columnheader">İçerik</span><span role="columnheader">Amaç</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">PZT 20:00</span><h3 role="cell">Haftanın lansmanı</h3><p role="cell">Yeni ürün ya da koleksiyon canlı tanıtılır; izleyici soru sorar, sınırlı ilk siparişler yayında alınır.</p><span class="goal" role="cell">Satış · dönüşüm</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">SAL</span><h3 role="cell">Üretimin arkası</h3><p role="cell">Atölye, fabrika ya da mutfak: ürünün nasıl yapıldığı, emeği ve ustalığı gösteren kısa belgesel.</p><span class="goal" role="cell">Güven · değer algısı</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">ÇAR 21:00</span><h3 role="cell">Uzman sohbeti</h3><p role="cell">Sektörden bir konuk ile 30 dakikalık sohbet; trendler, doğru seçim, sık yapılan hatalar.</p><span class="goal" role="cell">Otorite · arama</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">PER</span><h3 role="cell">Müşteri hikayesi</h3><p role="cell">Gerçek bir müşterinin ürünle kurduğu bağ; izinli, kısa ve samimi.</p><span class="goal" role="cell">Sosyal kanıt</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">CUM 19:00</span><h3 role="cell">Canlı soru-cevap</h3><p role="cell">Hafta boyunca gelen sorular yayında yanıtlanır; bakım, kullanım, fiyat ve kampanyalar.</p><span class="goal" role="cell">Topluluk · sadakat</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">HER GÜN</span><h3 role="cell">Klipler</h3><p role="cell">Haftanın yayınlarından kesilen kısa videolar sosyal medyada paylaşılır, kanala yönlendirir.</p><span class="goal" role="cell">Erişim · trafik</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-next">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-next"><span class="kicker">06</span>Dijital pazarlamanın bir sonraki dönemi</h2>
+          <p>Önümüzdeki yıllarda pazarlamayı belirleyecek eğilimlerin hepsi aynı yöne işaret ediyor: kendi verisine, kendi içeriğine ve kendi kitlesine sahip olan marka kazanıyor.</p>
+        </div>
+        <div class="next">
+          <div class="nx"><h3>Birinci taraf veri altın değerinde</h3><p>Çerezler ve üçüncü taraf takip zayıfladıkça, müşteriyi doğrudan tanıyan marka reklamı daha isabetli ve daha ucuza verir. Kendi kanal bu veriyi doğal olarak toplar.</p></div>
+          <div class="nx"><h3>Yapay zekâ içeriği çoğaltıyor</h3><p>Otomatik kurgu, altyazı ve çeviri sayesinde tek bir yayın; dakikalar içinde onlarca klibe, farklı dillere ve platformlara dönüşebiliyor.</p></div>
+          <div class="nx"><h3>Aramalar videoya ve yapay zekâya kayıyor</h3><p>İnsanlar sorularını video platformlarına ve yapay zekâ asistanlarına soruyor. Düzenli, konuşma diliyle anlatılmış uzman içeriği, bu yeni aramalarda markayı görünür kılar.</p></div>
+          <div class="nx"><h3>Güven, satışın yeni para birimi</h3><p>Kusursuz reklam görselleri yerine gerçek insanlar, gerçek ürün ve anlık sorular. Canlı yayın, kurgulanamayan bir dürüstlük hissi verir.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">Başlamak için</span>
+        <h2>Kanalınızı birlikte tasarlayalım.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="h-src">
+      <div class="wrap">
+        <span class="eyebrow" id="h-src">Kaynaklar</span>
+        <ol>
+          <li id="k1"><a href="https://chilealimentos.com/wp-content/uploads/2025/12/Selling-in-China-The-Rise-of-Livestreaming-E-commerce_Shanghai-ATO_China-Peoples-Republic-of_CH2025-0229.pdf" target="_blank" rel="noopener">USDA ATO Shanghai — Selling in China: The Rise of Livestreaming E-commerce (2025)</a></li>
+          <li id="k2"><a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/its-showtime-how-live-commerce-is-transforming-the-shopping-experience" target="_blank" rel="noopener">McKinsey — It's showtime! How live commerce is transforming the shopping experience</a></li>
+          <li id="k3"><a href="https://valueaddedresource.net/whatnot-20-billion-valuation/" target="_blank" rel="noopener">Value Added Resource — Whatnot Raises $545 Million At $20 Billion Valuation (2026)</a></li>
+          <li id="k4"><a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank" rel="noopener">Momentum Works — TikTok Shop U.S. GMV grew 68% to reach US$15.1B in 2025</a></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</Base>

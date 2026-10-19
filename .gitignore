@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.env
+.env.production
+.env.development
+.DS_Store
+*.log
+.vscode
+.idea
+.wrangler

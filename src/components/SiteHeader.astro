@@ -1,0 +1,35 @@
+---
+import { nav, paths, t } from '../data/i18n';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  locale: Locale;
+  pageKey: keyof typeof paths;
+}
+
+const { locale, pageKey } = Astro.props;
+const home = paths.home[locale];
+const trAlt = paths[pageKey].tr;
+const enAlt = paths[pageKey].en;
+const servicesHash = locale === 'tr'
+  ? (pageKey === 'home' ? '#hizmetler' : home + '#hizmetler')
+  : (pageKey === 'home' ? '#hizmetler' : home + '#hizmetler');
+const showcasePath = paths.ornekler[locale];
+const whyPath = paths.neden[locale];
+const contactHash = pageKey === 'home' ? '#iletisim' : home + '#iletisim';
+---
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href={home} aria-label="Livesider">L<span class="i">ı<span class="dot" aria-hidden="true"></span></span>vesider</a>
+    <nav class="links" aria-label="Menu">
+      <a class="navtxt" href={servicesHash}>{t(nav.services, locale)}</a>
+      <a class="navtxt" href={showcasePath} aria-current={pageKey === 'ornekler' ? 'page' : undefined}>{t(nav.showcase, locale)}</a>
+      <a class="navtxt" href={whyPath} aria-current={pageKey === 'neden' ? 'page' : undefined}>{t(nav.why, locale)}</a>
+      <a class="navtxt" href={contactHash}>{t(nav.contact, locale)}</a>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <a href={trAlt} hreflang="tr" aria-current={locale === 'tr' ? 'page' : undefined}>TR</a>
+        <a href={enAlt} hreflang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
+      </div>
+    </nav>
+  </div>
+</header>

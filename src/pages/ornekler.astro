@@ -1,0 +1,137 @@
+---
+import Base from '../layouts/Base.astro';
+import MailBlock from '../components/MailBlock.astro';
+import { Image } from 'astro:assets';
+import { meta, t } from '../data/i18n';
+import kozmetikImg from '../assets/kozmetik.jpg';
+import modaImg from '../assets/moda.jpg';
+import mucevherImg from '../assets/mucevher.jpg';
+import koleksiyonImg from '../assets/koleksiyon.jpg';
+import '../styles/ornekler.css';
+
+const locale = 'tr' as const;
+const page = meta.ornekler;
+---
+<Base locale={locale} pageKey="ornekler" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero show-hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Kanal örnekleri</span>
+          <h1>Her sektörün <em>kendi</em> yayın dili var.</h1>
+        </div>
+        <div class="side">
+          <p>Kozmetikte cildin dokusu, modada kumaşın hareketi, mücevherde taşın ışığı. Her örnekte ekranda görüneni ve onu mümkün kılan kamera arkasını yan yana gösteriyoruz.</p>
+          <nav class="jump" aria-label="Sektörler">
+            <a href="#kozmetik">Kozmetik</a>
+            <a href="#moda">Moda</a>
+            <a href="#mucevher">Mücevher</a>
+            <a href="#koleksiyon">Koleksiyon</a>
+          </nav>
+          <span class="disclaimer">Markalar ve yayınlar konsept örnektir; kanalınızın nasıl görünebileceğini göstermek için hazırlanmıştır.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mstrip">
+      <div class="wrap">
+        <span class="n">30</span>
+        <p>Her yayın; markanın kendi sitesi ve uygulamasıyla birlikte aynı anda 30'a kadar platforma gider.</p>
+        <a href="/#coklu-yayin">Çoklu yayın nasıl çalışır</a>
+      </div>
+    </div>
+
+    <section class="show" id="kozmetik">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Kozmetik · cilt bakımı</span>
+            <h2>Skin Ritual <span class="brand">· Velare</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Salı 20:00</span><span>30 dk · haftalık</span><span>Orta stüdyo</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={kozmetikImg} alt="Velare Skin Ritual canlı yayını: iki sunucu serum tanıtıyor, köşede makro cilt yakın planı ve fiyat kartı; sağda kamera arkası, reji ve makyaj" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="eager" />
+          <figcaption><a href="/img/kozmetik.jpg" target="_blank" rel="noopener">Tam boy</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>Uzman ve konuk sunucuyla haftalık cilt bakımı programı. Her bölüm tek bir ürünü ve tek bir rutini anlatır; izleyici soruları yayında yanıtlanır.</p></div>
+          <div class="onair"><span class="k">Ekranda</span><ul><li>Dokuyu gösteren makro insert kamera</li><li>Ürün ve fiyat kartı, tek tıkla sepete</li><li>Bölüm adlı alt bant</li></ul></div>
+          <div><span class="k">Kamera arkası</span><ul><li>Slider üzerinde makro ürün kamerası</li><li>Multiview reji ve switcher</li><li>Set makyajı ve ürün masası</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="moda">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Moda · hazır giyim</span>
+            <h2>New Season Edit <span class="brand">· Maison Éla</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Perşembe 19:00</span><span>45 dk · sezonluk seri</span><span>Büyük stüdyo</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={modaImg} alt="Maison Éla New Season Edit canlı yayını: stilist sunucu anlatırken model keten elbiseyle yürüyor, ürün kartı ekranda; sağda çok kameralı stüdyo, reji ve kostüm hazırlığı" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/moda.jpg" target="_blank" rel="noopener">Tam boy</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>Stilistin anlattığı, modelin canlı yürüdüğü sezon programı. Kumaşın hareketi ve kombin önerileri, statik katalog fotoğrafının veremediğini verir.</p></div>
+          <div class="onair"><span class="k">Ekranda</span><ul><li>Mini podyum ve kavisli fon</li><li>Beden seçimli ürün kartı</li><li>Sezon ve bölüm alt bandı</li></ul></div>
+          <div><span class="k">Kamera arkası</span><ul><li>Üç kamera, softbox ve parabolik ışık</li><li>Reji ve ses masası, iki operatör</li><li>Kostüm, ütü ve makyaj alanı</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="mucevher">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Mücevher · pırlanta</span>
+            <h2>Diamond Hour <span class="brand">· Luméa</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Cuma 21:00</span><span>40 dk · haftalık</span><span>Orta stüdyo</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={mucevherImg} alt="Luméa Diamond Hour canlı yayını: uzman ve konuk tek taş yüzüğü inceliyor, köşede taşın makro yakın planı ve karat-fiyat kartı; sağda makro ürün masası, reji ve eldivenli ürün hazırlığı" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/mucevher.jpg" target="_blank" rel="noopener">Tam boy</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>Uzman eşliğinde taş ve model seçimi. Yüksek değerli ürünlerde güveni ekranda kurmak için yakın plan, açık bilgi ve sakin bir sohbet dili.</p></div>
+          <div class="onair"><span class="k">Ekranda</span><ul><li>Işığı yakalayan makro taş görüntüsü</li><li>Karat ve fiyat bilgili ürün kartı</li><li>Loş, sıcak ve kontrollü ışık</li></ul></div>
+          <div><span class="k">Kamera arkası</span><ul><li>Işık çadırı, döner tabla ve makro kamera</li><li>Multiview reji</li><li>Kasa ve eldivenli ürün hazırlığı</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="koleksiyon">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">Koleksiyon · tesbih ve saat</span>
+            <h2>Collector's Table <span class="brand">· Novar</span></h2>
+          </div>
+          <div class="meta"><span class="slot">Pazar 20:30</span><span>60 dk · canlı açık artırma</span><span>Kompakt · tek oda</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={koleksiyonImg} alt="Novar Collector's Table canlı yayını: iki koleksiyoncu kehribar tesbih ve saat gösteriyor, köşede kehribarın makro yakın planı ve fiyat kartı; sağda ışık kutusunda makro çekim, kompakt reji ve set hazırlığı" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/koleksiyon.jpg" target="_blank" rel="noopener">Tam boy</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">Format</span><p>Koleksiyoncuların sohbet ettiği, parçaların hikayesini anlattığı ve canlı açık artırmayla satıldığı topluluk programı. Tek odada, küçük bir ekiple kurulabilir.</p></div>
+          <div class="onair"><span class="k">Ekranda</span><ul><li>Kehribarın içini gösteren makro görüntü</li><li>Canlı teklif ve fiyat kartı</li><li>Ahşap ve pirinç tonlarında sıcak set</li></ul></div>
+          <div><span class="k">Kamera arkası</span><ul><li>Işık kutusu üzerinde makro çekim</li><li>Kompakt reji, iki monitör</li><li>Yayın öncesi set ve sunucu hazırlığı</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta show-cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">Sıradaki örnek sizin kanalınız olsun</span>
+        <h2>Markanız için bir pilot bölüm tasarlayalım.</h2>
+        <p>Sektörünüzü ve mekanınızı anlatın; size özel format, set ve kamera arkası planını birlikte çıkaralım.</p>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+</Base>

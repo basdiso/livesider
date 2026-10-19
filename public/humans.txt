@@ -1,0 +1,9 @@
+/* TEAM */
+Studio: Livesider
+Contact: info@livesider.com
+Location: Istanbul
+
+/* SITE */
+Built with: Astro 5
+Hosting: Cloudflare Pages
+Last update: 2026

@@ -1,0 +1,13 @@
+---
+import { copy, contactEmail, t } from '../data/i18n';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+<div class="mail">
+  <a class="addr" id="addr" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+  <button class="copy" type="button" id="copy-btn" data-copy-label={t(copy.label, locale)} data-copy-done={t(copy.done, locale)}>{t(copy.label, locale)}</button>
+</div>

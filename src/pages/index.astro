@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+import MailBlock from '../components/MailBlock.astro';
+import { meta, siteUrl, siteName, t } from '../data/i18n';
+import '../styles/home.css';
+
+const locale = 'tr' as const;
+const page = meta.home;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': siteUrl + '/#website',
+  url: siteUrl,
+  name: siteName,
+  description: t(page.description, locale),
+  inLanguage: 'tr-TR',
+  publisher: { '@id': siteUrl + '/#org' },
+};
+---
+<Base locale={locale} pageKey="home" title={t(page.title, locale)} description={t(page.description, locale)} jsonLd={jsonLd}>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="copy">
+          <span class="eyebrow">Kurumsal yayın kanalları</span>
+          <h1>Markanızın <em>kendi</em> yayın kanalı.</h1>
+          <p class="lede">Stüdyodan sunucuya, kameradan mobil uygulamaya kadar. Firmaların kendi yayın kanallarını kurmalarına ve sürdürmelerine yardım eden küçük bir ekibiz.</p>
+          <a href="#coklu-yayin" class="live-note"><span class="rec" aria-hidden="true"></span>Tek stüdyo, 30 platforma eş zamanlı yayın</a>
+          <div class="cta-row">
+            <a class="btn primary" href="/ornekler"><span class="rec" aria-hidden="true"></span>Örnek kanalları gör</a>
+            <a class="btn ghost" href="/neden">Neden kendi kanalınız?</a>
+          </div>
+        </div>
+
+        <div class="rig" role="img" aria-label="Yayın monitörü ve multiview">
+          <div class="monitor">
+            <div class="mon-bar">
+              <div class="left"><span>PGM</span><span class="pill onair">CANLI</span></div>
+              <span><span class="tc" id="tc">00:00:00:00</span> · 25p</span>
+            </div>
+            <div class="screen-row">
+              <div class="screen" id="pgm-screen">
+                <canvas id="pgm" aria-hidden="true"></canvas>
+                <div class="safe" aria-hidden="true"></div>
+                <div class="l3" aria-hidden="true">
+                  <span class="name">Stüdyo A · Canlı yayın</span>
+                  <span class="sub">LIVESIDER · 1080p · HLS / SRT</span>
+                </div>
+              </div>
+              <div class="meters" aria-hidden="true"><div class="meter"><i id="mL"></i></div><div class="meter"><i id="mR"></i></div></div>
+            </div>
+          </div>
+          <div class="multiview" aria-hidden="true">
+            <div class="tile pvw"><div class="screen"><canvas id="pvw"></canvas></div><span><b>PVW</b><em style="font-style:normal">BARS</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam1"></canvas></div><span>CAM 1<em style="font-style:normal">WIDE</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam2"></canvas></div><span>CAM 2<em style="font-style:normal">CU</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam3"></canvas></div><span>CAM 3<em style="font-style:normal">PTZ</em></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chain" aria-label="Yayın zinciri">
+      <div class="wrap">
+        <span class="eyebrow">Uçtan uca yayın zinciri</span>
+        <div class="chain-scroll">
+          <div class="chain-track">
+            <span class="pulse" aria-hidden="true"></span>
+            <div class="node"><b>Stüdyo</b><small>kamera · ışık · ses</small></div>
+            <div class="node"><b>Reji</b><small>switcher · grafik</small></div>
+            <div class="node"><b>Encoder</b><small>H.264 / HEVC</small></div>
+            <div class="node"><b>Sunucu</b><small>SRT · RTMP · VOD</small></div>
+            <div class="node"><b>CDN</b><small>HLS · ABR</small></div>
+            <div class="node live"><b>Web &amp; Mobil</b><small>izleyici</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="multi" id="coklu-yayin" aria-labelledby="multi-h">
+      <div class="wrap">
+        <div class="txt">
+          <span class="eyebrow">Çoklu yayın</span>
+          <h2 id="multi-h" class="big">30<small>platforma eş zamanlı yayın</small></h2>
+          <p>Stüdyodan çıkan tek bir yayın; markanın kendi sitesi ve uygulamasıyla birlikte aynı anda 30'a kadar platforma ulaşır. Her platform için ayrı ekip, ayrı çekim ya da ayrı bütçe gerekmez.</p>
+          <ul>
+            <li>Tüm platformlarda aynı anda canlı</li>
+            <li>Yorumlar tek panelde toplanır</li>
+            <li>Ana yayın her zaman kendi kanalınızda</li>
+            <li>Yayın sonrası kayıt, klip ve arşiv</li>
+          </ul>
+          <div class="chips" aria-label="Platformlar"><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 PLATFORM</span></div>
+        </div>
+        <div class="orbit" aria-hidden="true"><svg id="orbit" viewBox="0 0 560 560"></svg></div>
+      </div>
+    </section>
+
+    <section class="block" id="hizmetler">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Kanalın her katmanı, tek ekipte.</h2>
+          <p>Bir firmanın yayın kanalı yalnızca kamera değildir. Format, stüdyo, altyapı ve dağıtım birlikte çalışmazsa kanal yaşamaz. Hepsini birlikte planlıyoruz.</p>
+        </div>
+        <div class="services">
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="32" height="20" rx="2"/><path d="M14 34h12M20 29v5"/><circle cx="29.5" cy="13.5" r="1.8" fill="var(--tally)" stroke="none"/></svg>
+            <h3>Kanal kurulumu</h3>
+            <p>Kanalın kimliği, yayın akışı ve yayına çıkış. Markanın kendi web sitesi ve mobil uygulaması kanalın ana vitrini olur.</p>
+            <div class="tags"><span>WEB</span><span>MOBİL</span><span>CANLI + VOD</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="13" width="20" height="15" rx="2"/><path d="M25 18l9-5v15l-9-5"/><circle cx="15" cy="20.5" r="4"/></svg>
+            <h3>Stüdyo ve ekipman planlama</h3>
+            <p>Kamera, ışık, ses ve akustik, her format için doğru ölçekte. Listeyi biz çıkarırız, satın alma şeffaf şekilde yapılır.</p>
+            <div class="tags"><span>KAMERA</span><span>IŞIK</span><span>SES</span><span>AKUSTİK</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="6" width="26" height="8" rx="1.5"/><rect x="7" y="16" width="26" height="8" rx="1.5"/><rect x="7" y="26" width="26" height="8" rx="1.5"/><path d="M12 10h2M12 20h2M12 30h2"/></svg>
+            <h3>Yayın altyapısı</h3>
+            <p>Encoder, yayın sunucusu, CDN ve uyarlanabilir bit hızı. İzleyici nerede olursa olsun akış kesintisiz kalır.</p>
+            <div class="tags"><span>SRT</span><span>RTMP</span><span>HLS</span><span>ABR</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="8" width="32" height="22" rx="2"/><path d="M8 24h14" stroke-width="3"/><path d="M8 19h9"/></svg>
+            <h3>Format ve içerik</h3>
+            <p>Programların yapısı, sunum dili, grafik ve altyazı. Ekibinize yayın disiplinini kazandırırız.</p>
+            <div class="tags"><span>FORMAT</span><span>GRAFİK</span><span>AI ALTYAZI</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="surec">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Fikirden yayına.</h2>
+          <p>Her kanal aynı dört adımdan geçer. Hızı mekana ve formata göre değişir, sırası değişmez.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="n">01 · KEŞİF</span><h3>Tanışma</h3><p>Markayı, hedef izleyiciyi ve yayın yapılacak mekanı yakından tanırız.</p></div>
+          <div class="step"><span class="n">02 · FORMAT</span><h3>Program yapısı</h3><p>Hangi programların yapılacağını ve haftalık yayın akışını birlikte belirleriz.</p></div>
+          <div class="step"><span class="n">03 · KURULUM</span><h3>Kurulum</h3><p>Stüdyo, sunucu, web ve mobil altyapıyı kurar, ekibi eğitiriz.</p></div>
+          <div class="step"><span class="n">04 · YAYIN</span><h3>Yayın ve işletme</h3><p>Kanalı birlikte yayına alır, işletmeyi ve gelişimi sürdürürüz.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="own" aria-labelledby="own-h">
+      <div class="wrap">
+        <h2 id="own-h">Kanal sizin.</h2>
+        <div>
+          <p>Kurduğumuz her şey markaya aittir. Biz kurar, işletir ve geliştiririz; anahtarlar her zaman sizde kalır.</p>
+          <ul>
+            <li>Kanal hesapları ve alan adı markanın adına</li>
+            <li>Ekipman ve lisanslar şeffaf şekilde markaya alınır</li>
+            <li>Platforma bağımlı değil, kendi dağıtımınız</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">İletişim</span>
+        <h2>Kanalınızı konuşalım.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+  <script>
+    import '../scripts/home-rig';
+    import '../scripts/orbit';
+  </script>
+</Base>

@@ -1,0 +1,174 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { meta, siteUrl, siteName, t } from '../../data/i18n';
+import '../../styles/home.css';
+
+const locale = 'en' as const;
+const page = meta.home;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': siteUrl + '/#website',
+  url: siteUrl,
+  name: siteName,
+  description: t(page.description, locale),
+  inLanguage: 'en-US',
+  publisher: { '@id': siteUrl + '/#org' },
+};
+---
+<Base locale={locale} pageKey="home" title={t(page.title, locale)} description={t(page.description, locale)} jsonLd={jsonLd}>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="copy">
+          <span class="eyebrow">Corporate broadcast channels</span>
+          <h1>Your brand's <em>own</em> broadcast channel.</h1>
+          <p class="lede">From studio to server, from camera to mobile app. We are a small team that helps companies build and run their own broadcast channels.</p>
+          <a href="#coklu-yayin" class="live-note"><span class="rec" aria-hidden="true"></span>One studio, 30 platforms at once</a>
+          <div class="cta-row">
+            <a class="btn primary" href="/en/showcase"><span class="rec" aria-hidden="true"></span>See sample channels</a>
+            <a class="btn ghost" href="/en/why">Why your own channel?</a>
+          </div>
+        </div>
+
+        <div class="rig" role="img" aria-label="Program monitor and multiview">
+          <div class="monitor">
+            <div class="mon-bar">
+              <div class="left"><span>PGM</span><span class="pill onair">ON AIR</span></div>
+              <span><span class="tc" id="tc">00:00:00:00</span> · 25p</span>
+            </div>
+            <div class="screen-row">
+              <div class="screen" id="pgm-screen">
+                <canvas id="pgm" aria-hidden="true"></canvas>
+                <div class="safe" aria-hidden="true"></div>
+                <div class="l3" aria-hidden="true">
+                  <span class="name">Studio A · Live</span>
+                  <span class="sub">LIVESIDER · 1080p · HLS / SRT</span>
+                </div>
+              </div>
+              <div class="meters" aria-hidden="true"><div class="meter"><i id="mL"></i></div><div class="meter"><i id="mR"></i></div></div>
+            </div>
+          </div>
+          <div class="multiview" aria-hidden="true">
+            <div class="tile pvw"><div class="screen"><canvas id="pvw"></canvas></div><span><b>PVW</b><em style="font-style:normal">BARS</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam1"></canvas></div><span>CAM 1<em style="font-style:normal">WIDE</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam2"></canvas></div><span>CAM 2<em style="font-style:normal">CU</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam3"></canvas></div><span>CAM 3<em style="font-style:normal">PTZ</em></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chain" aria-label="Signal chain">
+      <div class="wrap">
+        <span class="eyebrow">End-to-end signal chain</span>
+        <div class="chain-scroll">
+          <div class="chain-track">
+            <span class="pulse" aria-hidden="true"></span>
+            <div class="node"><b>Studio</b><small>camera · light · audio</small></div>
+            <div class="node"><b>Control room</b><small>switcher · graphics</small></div>
+            <div class="node"><b>Encoder</b><small>H.264 / HEVC</small></div>
+            <div class="node"><b>Server</b><small>SRT · RTMP · VOD</small></div>
+            <div class="node"><b>CDN</b><small>HLS · ABR</small></div>
+            <div class="node live"><b>Web &amp; Mobile</b><small>audience</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="multi" id="coklu-yayin" aria-labelledby="multi-h">
+      <div class="wrap">
+        <div class="txt">
+          <span class="eyebrow">Multistreaming</span>
+          <h2 id="multi-h" class="big">30<small>platforms, simultaneously</small></h2>
+          <p>One broadcast from the studio reaches up to 30 platforms at once, alongside the brand's own site and app. No separate crew, shoot or budget per platform.</p>
+          <ul>
+            <li>Live on every platform at once</li>
+            <li>Comments gathered in one panel</li>
+            <li>The main stream always lives on your channel</li>
+            <li>Recording, clips and archive after the show</li>
+          </ul>
+          <div class="chips" aria-label="Platforms"><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 MORE</span></div>
+        </div>
+        <div class="orbit" aria-hidden="true"><svg id="orbit" viewBox="0 0 560 560"></svg></div>
+      </div>
+    </section>
+
+    <section class="block" id="hizmetler">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Every layer of the channel, one team.</h2>
+          <p>A company's channel is more than a camera. Format, studio, infrastructure and distribution have to work together for a channel to last. We plan them as one.</p>
+        </div>
+        <div class="services">
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="32" height="20" rx="2"/><path d="M14 34h12M20 29v5"/><circle cx="29.5" cy="13.5" r="1.8" fill="var(--tally)" stroke="none"/></svg>
+            <h3>Channel setup</h3>
+            <p>Channel identity, programming schedule and launch. The brand's own website and mobile app become the channel's main window.</p>
+            <div class="tags"><span>WEB</span><span>MOBILE</span><span>LIVE + VOD</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="13" width="20" height="15" rx="2"/><path d="M25 18l9-5v15l-9-5"/><circle cx="15" cy="20.5" r="4"/></svg>
+            <h3>Studio &amp; equipment planning</h3>
+            <p>Cameras, lighting, audio and acoustics, sized for each format. We write the spec; purchasing stays transparent.</p>
+            <div class="tags"><span>CAMERA</span><span>LIGHT</span><span>AUDIO</span><span>ACOUSTICS</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="6" width="26" height="8" rx="1.5"/><rect x="7" y="16" width="26" height="8" rx="1.5"/><rect x="7" y="26" width="26" height="8" rx="1.5"/><path d="M12 10h2M12 20h2M12 30h2"/></svg>
+            <h3>Broadcast infrastructure</h3>
+            <p>Encoders, streaming servers, CDN and adaptive bitrate. The stream holds up wherever the audience is.</p>
+            <div class="tags"><span>SRT</span><span>RTMP</span><span>HLS</span><span>ABR</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="8" width="32" height="22" rx="2"/><path d="M8 24h14" stroke-width="3"/><path d="M8 19h9"/></svg>
+            <h3>Format &amp; content</h3>
+            <p>Show structure, on-air voice, graphics and subtitles. We bring broadcast discipline to your team.</p>
+            <div class="tags"><span>FORMAT</span><span>GRAPHICS</span><span>AI SUBTITLES</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="surec">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>From idea to on air.</h2>
+          <p>Every channel goes through the same four steps. The pace depends on the venue and format; the order doesn't.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="n">01 · DISCOVERY</span><h3>Discovery</h3><p>We get to know the brand, the audience and the space you'll broadcast from.</p></div>
+          <div class="step"><span class="n">02 · FORMAT</span><h3>Programming</h3><p>Together we decide which shows to make and the weekly schedule.</p></div>
+          <div class="step"><span class="n">03 · BUILD</span><h3>Build</h3><p>We set up the studio, server, web and mobile stack, and train your team.</p></div>
+          <div class="step"><span class="n">04 · ON AIR</span><h3>Run</h3><p>We launch the channel with you and keep running and improving it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="own" aria-labelledby="own-h">
+      <div class="wrap">
+        <h2 id="own-h">The channel is yours.</h2>
+        <div>
+          <p>Everything we build belongs to the brand. We set it up, run it and improve it; the keys always stay with you.</p>
+          <ul>
+            <li>Channel accounts and domain in the brand's name</li>
+            <li>Equipment and licenses purchased transparently for the brand</li>
+            <li>Your own distribution, not locked to a platform</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's talk about your channel.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+  <script>
+    import '../../scripts/home-rig';
+    import '../../scripts/orbit';
+  </script>
+</Base>

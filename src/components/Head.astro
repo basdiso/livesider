@@ -1,0 +1,90 @@
+---
+import { siteUrl, siteName, ogLocale, hreflangFor, paths } from '../data/i18n';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  locale: Locale;
+  pageKey: keyof typeof paths;
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { locale, pageKey, title, description, jsonLd } = Astro.props;
+const canonical = siteUrl + paths[pageKey][locale];
+const hreflangs = hreflangFor(pageKey);
+const ogImage = siteUrl + '/og.png';
+
+const defaultJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': canonical,
+  url: canonical,
+  name: title,
+  description,
+  inLanguage: locale === 'tr' ? 'tr-TR' : 'en-US',
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': siteUrl + '/#website',
+    url: siteUrl,
+    name: siteName,
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': siteUrl + '/#org',
+  },
+};
+const ld = jsonLd ?? defaultJsonLd;
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': siteUrl + '/#org',
+  name: siteName,
+  url: siteUrl,
+  logo: siteUrl + '/favicon.svg',
+  email: 'info@livesider.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Istanbul',
+    addressCountry: 'TR',
+  },
+  areaServed: 'Worldwide',
+  description: 'Livesider helps brands build and run their own broadcast channels.',
+};
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonical} />
+{hreflangs.map((h) => (
+  <link rel="alternate" hreflang={h.hreflang} href={h.href} />
+))}
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={ogLocale(locale)} />
+<meta property="og:locale:alternate" content={ogLocale(locale === 'tr' ? 'en' : 'tr')} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={siteName} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<meta name="theme-color" content="#0b0d12" />
+<meta name="format-detection" content="telephone=no" />
+
+<script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />

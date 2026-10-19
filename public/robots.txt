@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://livesider.com/sitemap-index.xml

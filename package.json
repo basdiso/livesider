@@ -1,0 +1,25 @@
+{
+  "name": "livesider",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.14.0",
+    "@astrojs/sitemap": "^3.5.1",
+    "@fontsource/archivo": "^5.2.6",
+    "@fontsource/ibm-plex-sans": "^5.2.6",
+    "@fontsource/jetbrains-mono": "^5.2.6",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@10.33.2"
+}
