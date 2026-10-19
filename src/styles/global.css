@@ -1,12 +1,8 @@
-@import '@fontsource/archivo/400.css';
-@import '@fontsource/archivo/600.css';
-@import '@fontsource/archivo/700.css';
-@import '@fontsource/archivo/800.css';
+@import '@fontsource-variable/archivo/wdth.css';
 @import '@fontsource/ibm-plex-sans/400.css';
 @import '@fontsource/ibm-plex-sans/500.css';
 @import '@fontsource/ibm-plex-sans/600.css';
-@import '@fontsource/jetbrains-mono/400.css';
-@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource-variable/jetbrains-mono/index.css';
 
 :root {
   --bg: #0b0d12;
@@ -19,9 +15,9 @@
   --amber: #e8a849;
   --tally: #ff2a2a;
   --meter-lo: #3fbf7f;
-  --display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --display: 'Archivo Variable', 'Archivo', 'Arial Narrow', system-ui, sans-serif;
   --body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --gut-l: max(16px, env(safe-area-inset-left, 0px));
   --gut-r: max(16px, env(safe-area-inset-right, 0px));
   color-scheme: dark;
@@ -92,8 +88,8 @@ header.top .wrap {
   position: absolute;
   left: 50%;
   top: -.02em;
-  width: .22em;
-  height: .22em;
+  width: .3em;
+  height: .3em;
   transform: translateX(-50%);
   border-radius: 50%;
   background: var(--tally);
@@ -170,7 +166,7 @@ footer .wrap {
   user-select: all;
   word-break: break-all;
 }
-.copy {
+.copy-btn {
   all: unset;
   cursor: pointer;
   font-family: var(--mono);
@@ -181,8 +177,8 @@ footer .wrap {
   padding: 7px 14px;
   color: var(--muted);
 }
-.copy:hover { color: var(--fg); border-color: var(--muted) }
-.copy:focus-visible { outline: 2px solid var(--amber) }
+.copy-btn:hover { color: var(--fg); border-color: var(--muted) }
+.copy-btn:focus-visible { outline: 2px solid var(--amber) }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important }

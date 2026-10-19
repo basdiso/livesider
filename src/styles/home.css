@@ -273,12 +273,36 @@
   aspect-ratio: 1/1;
 }
 .orbit svg { width: 100%; height: 100%; display: block; overflow: visible }
-.orbit .hub-label { font-family: var(--display); font-stretch: 85%; font-weight: 700; fill: var(--bg) }
-.orbit .plat { font-family: var(--mono); fill: var(--muted) }
+.orbit .hub-brand {
+  font-family: var(--display);
+  font-stretch: 118%;
+  font-weight: 720;
+  font-size: 20px;
+  line-height: 36px;
+  letter-spacing: -.01em;
+  color: var(--bg);
+  text-align: center;
+  white-space: nowrap;
+}
+.orbit .hub-brand .i { position: relative; display: inline-block }
+.orbit .hub-brand .i .dot {
+  position: absolute;
+  left: 50%;
+  top: -.02em;
+  width: .3em;
+  height: .3em;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--tally);
+  box-shadow: 0 0 .35em var(--tally), 0 0 .9em rgba(255, 42, 42, .55);
+  animation: tally 2.4s ease-in-out infinite;
+}
 .orbit .ray { stroke: var(--line); stroke-width: 1 }
 .orbit .ray.hot { stroke: var(--amber); stroke-width: 1.6 }
 .orbit .pt { fill: var(--panel-2); stroke: var(--line) }
 .orbit .pt.hot { fill: var(--amber); stroke: var(--amber) }
+.orbit .brand { color: var(--muted); transition: color .18s ease }
+.orbit .brand.hot { color: var(--amber) }
 .chips { display: flex; flex-wrap: wrap; gap: 6px }
 .chips span {
   font-family: var(--mono);
@@ -290,6 +314,11 @@
   padding: 3px 8px;
 }
 .chips span.more { color: var(--amber); border-color: rgba(232, 168, 73, .4) }
+.chips span.own {
+  color: var(--fg);
+  border-color: rgba(232, 168, 73, .55);
+  background: rgba(232, 168, 73, .08);
+}
 @media (max-width: 960px) {
   .multi .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 72px }
 }

@@ -1,0 +1,59 @@
+---
+import {
+  siYoutube, siInstagram, siFacebook, siTiktok, siX,
+  siTwitch, siKick, siVimeo, siDailymotion, siWhatsapp,
+} from 'simple-icons';
+
+const CX = 280, CY = 280, R = 228;
+const N = 30;
+
+const BRANDS = [
+  siYoutube, siInstagram, siFacebook, null, siTiktok,
+  siX, siTwitch, siKick, siVimeo, siDailymotion,
+] as const;
+
+const points = Array.from({ length: N }, (_, i) => {
+  const a = -Math.PI / 2 + (i * 2 * Math.PI) / N;
+  return {
+    x: CX + R * Math.cos(a),
+    y: CY + R * Math.sin(a),
+    angle: a,
+  };
+});
+---
+<svg id="orbit" viewBox="0 0 560 560" aria-hidden="true">
+  {points.map((p) => (
+    <line x1={CX} y1={CY} x2={p.x} y2={p.y} class="ray" />
+  ))}
+  {points.map((p, j) => (
+    <circle cx={p.x} cy={p.y} r={j % 3 === 0 ? 9 : 6} class="pt" />
+  ))}
+
+  <circle cx={CX} cy={CY} r="96" fill="none" stroke="var(--line)" stroke-dasharray="3 5" />
+  <circle cx={CX} cy={CY} r="62" fill="var(--fg)" />
+
+  <foreignObject x={CX - 60} y={CY - 18} width="120" height="36">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="hub-brand">L<span class="i">ı<span class="dot"></span></span>vesider</div>
+  </foreignObject>
+
+  {points.map((p, j) => {
+    if (j % 3 !== 0) return null;
+    const idx = j / 3;
+    const brand = BRANDS[idx];
+    const lx = CX + (R + 36) * Math.cos(p.angle);
+    const ly = CY + (R + 36) * Math.sin(p.angle);
+    if (!brand) {
+      return (
+        <g class="brand" transform={`translate(${lx - 11},${ly - 11})`} aria-label="LinkedIn">
+          <rect width="22" height="22" rx="3.5" fill="currentColor" />
+          <text x="11" y="16" text-anchor="middle" font-size="13" font-weight="800" font-family="Archivo, Arial, sans-serif" fill="var(--bg)">in</text>
+        </g>
+      );
+    }
+    return (
+      <g class="brand" transform={`translate(${lx - 11},${ly - 11})`} aria-label={brand.title}>
+        <path d={brand.path} transform="scale(0.9167)" fill="currentColor" />
+      </g>
+    );
+  })}
+</svg>

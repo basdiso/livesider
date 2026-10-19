@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import MailBlock from '../../components/MailBlock.astro';
 import { meta, siteUrl, siteName, t } from '../../data/i18n';
+import Orbit from '../../components/Orbit.astro';
 import '../../styles/home.css';
 
 const locale = 'en' as const;
@@ -23,7 +24,7 @@ const jsonLd = {
       <div class="wrap">
         <div class="copy">
           <span class="eyebrow">Corporate broadcast channels</span>
-          <h1>Your brand's <em>own</em> broadcast channel.</h1>
+          <h1>Your brand's <em>own</em> broadcast technology.</h1>
           <p class="lede">From studio to server, from camera to mobile app. We are a small team that helps companies build and run their own broadcast channels.</p>
           <a href="#coklu-yayin" class="live-note"><span class="rec" aria-hidden="true"></span>One studio, 30 platforms at once</a>
           <div class="cta-row">
@@ -89,9 +90,9 @@ const jsonLd = {
             <li>The main stream always lives on your channel</li>
             <li>Recording, clips and archive after the show</li>
           </ul>
-          <div class="chips" aria-label="Platforms"><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 MORE</span></div>
+          <div class="chips" aria-label="Platforms"><span class="own">WEB &amp; MOBILE APP</span><span>WHATSAPP</span><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 MORE</span></div>
         </div>
-        <div class="orbit" aria-hidden="true"><svg id="orbit" viewBox="0 0 560 560"></svg></div>
+        <div class="orbit" aria-hidden="true"><Orbit /></div>
       </div>
     </section>
 
