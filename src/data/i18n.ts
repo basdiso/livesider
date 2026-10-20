@@ -11,6 +11,7 @@ type PathMap = L10n;
 export const paths: Record<string, PathMap> = {
   home: { tr: '/', en: '/en', ar: '/ar' },
   neden: { tr: '/neden', en: '/en/why', ar: '/ar/why' },
+  sss: { tr: '/sss', en: '/en/faq', ar: '/ar/faq' },
   ornekler: { tr: '/ornekler', en: '/en/showcase', ar: '/ar/showcase' },
 };
 
@@ -18,6 +19,7 @@ export const nav: Record<string, L10n> = {
   services: { tr: 'Hizmetler', en: 'Services', ar: 'الخدمات' },
   showcase: { tr: 'Örnekler', en: 'Showcase', ar: 'النماذج' },
   why: { tr: 'Neden Live?', en: 'Why Live?', ar: 'لماذا البث؟' },
+  faq: { tr: 'Soru-Cevap', en: 'Q&A', ar: 'أسئلة وأجوبة' },
   contact: { tr: 'İletişim', en: 'Contact', ar: 'تواصل' },
 };
 
@@ -69,6 +71,18 @@ export const meta = {
       tr: 'Kozmetik, moda, mücevher ve koleksiyon markaları için canlı yayın kanal ve kamera arkası konseptleri.',
       en: 'Live broadcast channel and backstage concepts for beauty, fashion, fine jewelry and collectibles brands.',
       ar: 'مفاهيم قنوات البث المباشر والكواليس لعلامات التجميل والأزياء والمجوهرات والمقتنيات.',
+    } satisfies L10n,
+  },
+  sss: {
+    title: {
+      tr: 'Soru-Cevap — Markanın kendi dijital dünyası | Livesider',
+      en: 'Q&A — Build your brand\'s own digital world | Livesider',
+      ar: 'أسئلة وأجوبة — عالم رقمي خاص بعلامتك | Livesider',
+    } satisfies L10n,
+    description: {
+      tr: 'Instagram\'ın milyonlar arasında kaybolmak yerine kapalı devre, VIP hissi veren, marka değerini koruyan kendi dijital dünyanızı kurun. Soru-cevap eşliğinde.',
+      en: 'Instead of getting lost among millions on Instagram, build your own private, VIP, brand-safe digital world. Explained Q&A.',
+      ar: 'بدلًا من الضياع بين الملايين على إنستغرام، ابنِ عالمك الرقمي الخاص الحصري الذي يحفظ قيمة علامتك ويمنح عملاءك شعور الـ VIP.',
     } satisfies L10n,
   },
 };

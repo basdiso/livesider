@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { meta, siteUrl, t } from '../../data/i18n';
+import '../../styles/sss.css';
+
+const locale = 'en' as const;
+const page = meta.sss;
+
+const faqs = [
+  {
+    q: 'There are already millions of brands on Instagram. Who\'s going to find me on a new place?',
+    a: [
+      'Wrong question. On your own channel you\'re not <strong>trying to catch strangers</strong>; you\'re turning the people your social voice already reaches into direct viewers.',
+      'Social media is the "get noticed" layer — crowded, noisy, expensive. Your own channel is the "build the relationship, close the sale" layer — quiet, focused, profitable.',
+      'So you don\'t drop Instagram. You use Instagram as a <em>shop window that feeds your own channel</em>.',
+    ],
+  },
+  {
+    q: 'What is a closed-circuit broadcast, and how is it different from a public one?',
+    a: [
+      'Public broadcast = YouTube Live, Instagram Live. Anyone sees it, the algorithm decides who gets shown what and when, and a competitor\'s ad or a random trend can scroll in next to your brand.',
+      'Closed-circuit broadcast = a stream room only invited guests, members or specific segments can enter. Your rules, your screen, your distribution.',
+      'Use cases:',
+      '<ul><li>VIP launch previews for existing customers</li><li>Dealer / distributor training</li><li>Members-only premium content</li><li>Invitation-only auctions or trunk shows</li><li>Live B2B demo sessions</li></ul>',
+    ],
+  },
+  {
+    q: 'What harm can irrelevant viewers really do to my brand?',
+    a: [
+      'In a public broadcast every click feels valuable. But for a brand <strong>the wrong viewer is noise</strong>, and sometimes damage.',
+      'View counts inflate while conversion rates drop. Ad platforms then use that signal to send you even more "wrong viewers" — a self-reinforcing loop.',
+      'What matters is <em>the right 500 people</em>, not 50,000 incidental impressions. Closed-circuit broadcasting makes that selection at the door.',
+    ],
+  },
+  {
+    q: 'How do you actually give a customer the VIP feeling?',
+    a: [
+      'The VIP feeling is the sum of:',
+      '<ul><li><strong>Access privilege:</strong> A stream only members can see.</li><li><strong>Time privilege:</strong> Seeing the product 48 hours before it goes on sale.</li><li><strong>Conversation privilege:</strong> Direct Q&A with the host, being called by name.</li><li><strong>Space privilege:</strong> The brand\'s own studio and interface — not somebody else\'s promo zone.</li></ul>',
+      'None of these four privileges can be delivered on Instagram Live; all four come naturally on your own channel.',
+    ],
+  },
+  {
+    q: 'Why does my brand value erode on social media?',
+    a: [
+      'Because on social media it\'s not <strong>the brand that speaks</strong>, but <strong>the feed\'s rules</strong>: hook in 15 seconds, chase trends, dance.',
+      'A luxury jewelry brand gets scrolled past right next to a meme account. A boutique restaurant appears in the same feed as a cheap dropshipping ad. Price perception takes damage from that neighborhood.',
+      'On your own channel, the only other things next to your brand are other shows — all produced by the brand, same aesthetics, same discipline.',
+    ],
+  },
+  {
+    q: 'Isn\'t building my own digital world a huge workload?',
+    a: [
+      'The initial setup is, yes, an investment. After that a small team can run it.',
+      '<strong>One live broadcast a week plus a few hours of planning</strong> is enough. That broadcast yields 10-15 short clips that feed social media for a week. So the workload isn\'t growing; <em>the recurring effort just concentrates on one strong show</em>.',
+      'We build the studio, infrastructure and schedule; we train your team; from there the operation continues with you.',
+    ],
+  },
+  {
+    q: 'Do I have to drop social media completely?',
+    a: [
+      'No. The architecture is actually:',
+      '<ul><li><strong>Social media</strong> → mouth of the funnel. Where people discover you.</li><li><strong>Owned channel</strong> → bottom of the funnel. Where viewers turn into customers.</li></ul>',
+      'Without social media the inbound traffic shrinks. Without an owned channel, converting that traffic depends every time on the platform\'s mercy.',
+    ],
+  },
+  {
+    q: 'How do I measure return on this investment?',
+    a: [
+      'On your own channel <strong>every metric is yours</strong>. Every data point Instagram doesn\'t give beyond "views" comes naturally:',
+      '<ul><li>Member count and growth rate</li><li>Watch time per broadcast</li><li>In-stream clicks and add-to-cart</li><li>Lifetime value per member</li><li>Repeat watch rate</li><li>Post-broadcast clip traffic</li></ul>',
+      'With that data both your content planning and your ad spend become more precise every month.',
+    ],
+  },
+  {
+    q: 'Who is this not right for?',
+    a: [
+      'A channel needs <em>regular production and a point of view</em>. Brands that can\'t spare even 15 studio minutes a week, that have no story to tell, or that are uncomfortable speaking directly to customers — this isn\'t for you.',
+      'On the other hand: any brand — small or large — that wants to explain its product, share its expertise, or build a customer community will find an owned channel makes sense.',
+    ],
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': siteUrl + '/en/faq#faq',
+  inLanguage: 'en-US',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a.join(' ').replace(/<[^>]+>/g, ''),
+    },
+  })),
+};
+---
+<Base locale={locale} pageKey="sss" title={t(page.title, locale)} description={t(page.description, locale)} jsonLd={faqJsonLd}>
+  <main>
+    <section class="hero faq">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Q&A</span>
+          <span class="motto">Build your brand's own digital world</span>
+          <h1>Not an account in a crowd of millions. <em>A brand in a world of its own.</em></h1>
+        </div>
+        <div class="side">
+          <p>While you try to get noticed among Instagram's millions of accounts, you drift a little further from your real customers and your potential audience every day. A closed-circuit broadcast keeps irrelevant viewers out, protects brand value, and tells every customer "you're the one invited".</p>
+          <div class="quote">Brand value is measured by who you speak with, not by who you appear to.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="thesis">
+      <div class="wrap">
+        <h2>Thesis.</h2>
+        <div class="body">
+          <p>Social media <em>announces</em> your brand. Your own digital world <em>sustains</em> it. The choice isn't one or the other, but splitting the roles correctly between the two.</p>
+          <p>Instagram, TikTok, YouTube — these are apartments your brand lives in as a tenant. The building management writes the rules, you can't pick your neighbors, and you don't know who's going to knock on the door. Your own channel is your building: the gatekeeper, the entrance rules, the guest list — all in your hands.</p>
+          <p>This page collects the practical answers to the question "why should I build my own digital world?".</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="qa-block">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Frequently asked questions</h2>
+          <p>The nine questions most brand owners ask first when they think about this, and the answers we give. Click to open.</p>
+        </div>
+        <div class="qa-list">
+          {faqs.map((f, i) => (
+            <details class="qa-item">
+              <summary>
+                <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                <span class="q">{f.q}</span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="answer">
+                <div>
+                  {f.a.map((p) => (
+                    <p set:html={p} />
+                  ))}
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta faq-cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">The rest, in a conversation</span>
+        <h2>Let's talk about how we'd build your own digital world.</h2>
+        <p>Tell us about your brand, your target audience and your current digital presence — we'll draft a roadmap tailored to you.</p>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+</Base>

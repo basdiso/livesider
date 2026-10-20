@@ -12,6 +12,7 @@ const home = paths.home[locale];
 const servicesHash = pageKey === 'home' ? '#hizmetler' : home + '#hizmetler';
 const showcasePath = paths.ornekler[locale];
 const whyPath = paths.neden[locale];
+const faqPath = paths.sss[locale];
 const contactHash = pageKey === 'home' ? '#iletisim' : home + '#iletisim';
 const localeLabels: Record<Locale, string> = { tr: 'TR', en: 'EN', ar: 'AR' };
 ---
@@ -22,6 +23,7 @@ const localeLabels: Record<Locale, string> = { tr: 'TR', en: 'EN', ar: 'AR' };
       <a class="navtxt" href={servicesHash}>{t(nav.services, locale)}</a>
       <a class="navtxt" href={showcasePath} aria-current={pageKey === 'ornekler' ? 'page' : undefined}>{t(nav.showcase, locale)}</a>
       <a class="navtxt" href={whyPath} aria-current={pageKey === 'neden' ? 'page' : undefined}>{t(nav.why, locale)}</a>
+      <a class="navtxt" href={faqPath} aria-current={pageKey === 'sss' ? 'page' : undefined}>{t(nav.faq, locale)}</a>
       <a class="navtxt" href={contactHash}>{t(nav.contact, locale)}</a>
       <div class="lang" role="group" aria-label="Dil / Language / اللغة">
         {LOCALES.map((loc) => (

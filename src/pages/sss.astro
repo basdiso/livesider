@@ -1,0 +1,163 @@
+---
+import Base from '../layouts/Base.astro';
+import MailBlock from '../components/MailBlock.astro';
+import { meta, siteUrl, t } from '../data/i18n';
+import '../styles/sss.css';
+
+const locale = 'tr' as const;
+const page = meta.sss;
+
+const faqs = [
+  {
+    q: 'Instagram\'da zaten milyonlarca marka var. Yeni bir mecrada beni kim bulur?',
+    a: [
+      'Yanlış soru. Kendi kanalında <strong>yabancıları yakalamaya</strong> çalışmıyorsun; sosyal medyadaki sesinin zaten ulaştığı insanları doğrudan izleyiciye çeviriyorsun.',
+      'Sosyal medya "sesini duyur" aşamasıdır — kalabalık, gürültülü, pahalı. Kendi kanal "ilişki kur, satış kapat" aşamasıdır — sessiz, odaklı, kârlı.',
+      'Yani Instagram\'ı bırakmıyorsun. Instagram\'ı <em>kendi kanalını besleyen bir vitrin</em> olarak kullanıyorsun.',
+    ],
+  },
+  {
+    q: 'Kapalı devre yayın ne demek, herkese açık yayından farkı nedir?',
+    a: [
+      'Herkese açık yayın = YouTube Live, Instagram Live. Herkes görür, algoritma kime ne zaman göstereceğine karar verir, markanın yanında rakip reklamı veya tesadüfi bir trend akar.',
+      'Kapalı devre yayın = sadece davet edilenlerin, üyelerin veya belirli segmentlerin girebildiği bir yayın odası. Senin kuralların, senin ekranın, senin dağıtımın.',
+      'Kullanım senaryoları:',
+      '<ul><li>VIP müşterilere özel lansman ön gösterimi</li><li>Bayi/distribütör eğitimleri</li><li>Üyelik planlı premium içerik</li><li>Davetli müzayede veya "trunk show"</li><li>B2B canlı demo oturumları</li></ul>',
+    ],
+  },
+  {
+    q: 'Alakasız izleyicinin markama ne zararı olabilir ki?',
+    a: [
+      'Herkese açık yayında her tıklama değerli görünür. Oysa marka için <strong>yanlış izleyici gürültüdür</strong>, bazen zarardır.',
+      'İzlenme oranları şişer, ama dönüşüm oranları düşer. Reklam platformları bu veriyi kullanarak sana daha fazla "yanlış izleyici" bulur — bir kısır döngü başlar.',
+      'Değerli olan şey <em>doğru 500 kişi</em>, 50.000 rastlantısal gösterim değil. Kapalı devre yayın bu seçkiyi en başta yapar.',
+    ],
+  },
+  {
+    q: 'Müşteriye VIP hissi nasıl verilir?',
+    a: [
+      'VIP hissi, aşağıdakilerin toplamıdır:',
+      '<ul><li><strong>Erişim ayrıcalığı:</strong> Herkesin değil, üyenin görebildiği yayın.</li><li><strong>Zaman ayrıcalığı:</strong> Satışa çıkmadan 48 saat önce ürünü görmek.</li><li><strong>Konuşma ayrıcalığı:</strong> Sunucuyla doğrudan soru-cevap, isme hitap.</li><li><strong>Mekan ayrıcalığı:</strong> Markanın kendi stüdyosu, kendi arayüzü — başka bir şeyin tanıtım alanı değil.</li></ul>',
+      'Bu dört ayrıcalığın hiçbiri Instagram Live\'da verilemez; dördü de kendi kanalında doğaldır.',
+    ],
+  },
+  {
+    q: 'Sosyal medyada marka değerim neden aşınıyor?',
+    a: [
+      'Çünkü sosyal medyada <strong>markanın kendisi değil, feed\'in kuralları</strong> konuşur: 15 saniyede yakala, trend ol, dans et.',
+      'Lüks bir mücevher markası, bir meme hesabının yanında kaydırılıyor. Butik bir restoran, ucuz dropshipping reklamıyla aynı akışta görünüyor. Fiyat algısı bu komşuluktan yara alır.',
+      'Kendi kanalında markanın yanında yalnızca başka programlar — hepsi marka tarafından üretilmiş, aynı estetik, aynı disiplin — bulunur.',
+    ],
+  },
+  {
+    q: 'Kendi dijital dünyamı kurmak büyük bir iş yükü değil mi?',
+    a: [
+      'İlk kurulum, evet, bir yatırım. Ama sonrası küçük bir ekiple dönebilir.',
+      'Haftada <strong>bir canlı yayın + birkaç saatlik planlama</strong> yeter. Yayından 10-15 kısa klip çıkar, bir hafta boyunca sosyal medyayı besler. Yani iş yükü artmıyor; <em>tekrar eden çaba tek bir güçlü yayına yoğunlaşıyor</em>.',
+      'Stüdyoyu, altyapıyı, yayın akışını biz kuruyoruz; ekibini eğitiyoruz; sonra operasyon seninle devam ediyor.',
+    ],
+  },
+  {
+    q: 'Sosyal medyayı tamamen bırakmam mı gerekir?',
+    a: [
+      'Hayır. Mimari aslında şöyle:',
+      '<ul><li><strong>Sosyal medya</strong> → huni ağzı. İnsanları keşfettiren yer.</li><li><strong>Kendi kanal</strong> → huni dibi. İzleyiciyi müşteriye çeviren yer.</li></ul>',
+      'Sosyal medya olmadan trafik azalır. Kendi kanal olmadan trafiğin satışa dönüşmesi her seferinde platformun insafına kalır.',
+    ],
+  },
+  {
+    q: 'Yatırımın karşılığını nasıl ölçeceğim?',
+    a: [
+      'Kendi kanalında <strong>her metrik senin</strong>. Instagram\'ın "görüntülenme" dışında vermediği her veri burada doğal olarak oluşur:',
+      '<ul><li>Üye sayısı ve büyüme hızı</li><li>Yayın başına izleme süresi</li><li>Yayın içi tıklama ve sepete ekleme</li><li>Üye başına ömür boyu değer (LTV)</li><li>Tekrar izleme oranı</li><li>Yayın-sonrası klip trafiği</li></ul>',
+      'Bu verilerle hem içerik planın hem reklam yatırımın her ay daha isabetli olur.',
+    ],
+  },
+  {
+    q: 'Kime uygun değil?',
+    a: [
+      'Kanal, <em>düzenli üretim ve bir mesaj</em> gerektirir. Haftada 15 dakika stüdyo bile vakit ayıramayan, anlatacak hikayesi olmayan, ya da müşterisiyle doğrudan konuşmaktan rahatsız olan markalar için uygun değildir.',
+      'Buna karşılık; ürünü anlatmak isteyen, uzmanlığını paylaşmak isteyen, müşteri topluluğu kurmak isteyen her marka için — küçük ya da büyük — kendi kanal mantıklıdır.',
+    ],
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': siteUrl + '/sss#faq',
+  inLanguage: 'tr-TR',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a.join(' ').replace(/<[^>]+>/g, ''),
+    },
+  })),
+};
+---
+<Base locale={locale} pageKey="sss" title={t(page.title, locale)} description={t(page.description, locale)} jsonLd={faqJsonLd}>
+  <main>
+    <section class="hero faq">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Soru-Cevap</span>
+          <span class="motto">Markanın kendi dijital dünyasını yarat</span>
+          <h1>Milyonların arasında bir hesap değil. <em>Kendi dünyanda bir marka.</em></h1>
+        </div>
+        <div class="side">
+          <p>Instagram'ın milyonlarca hesabı arasında fark edilmeye çalışırken, aslında gerçek müşterinden ve potansiyel kitlenden her gün biraz daha uzaklaşırsın. Kapalı devre yayın ise alakasız izleyiciyi dışarıda tutar, marka değerini korur, müşterine "sen özelsin" hissini verir.</p>
+          <div class="quote">Marka değeri, kime göründüğünle değil; kiminle konuştuğunla ölçülür.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="thesis">
+      <div class="wrap">
+        <h2>Tez.</h2>
+        <div class="body">
+          <p>Sosyal medya markanı <em>duyurur</em>. Kendi dijital dünyan markanı <em>yaşatır</em>. Birini diğerine tercih etmek değil, ikisinin arasındaki rolleri doğru paylaştırmak gerekir.</p>
+          <p>Instagram, TikTok, YouTube — hepsi senin markanın kiracı olarak yaşadığı apartmanlardır. Kuralı apartman yönetimi koyar, komşuyu seçemezsin, kapını ne zaman çalanı bilemezsin. Kendi kanal ise senin binan: kapıdaki görevli, giriş kuralları, davetliler listesi, hepsi senin elinde.</p>
+          <p>Bu sayfa, "kendi dijital dünyamı neden kurmalıyım" sorusunun pratik cevaplarını topluyor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="qa-block">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Sık sorulan sorular</h2>
+          <p>Konuyu düşünen çoğu marka sahibinin ilk sorduğu dokuz soru ve verdiğimiz cevaplar. Üstüne tıklayarak aç.</p>
+        </div>
+        <div class="qa-list">
+          {faqs.map((f, i) => (
+            <details class="qa-item">
+              <summary>
+                <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                <span class="q">{f.q}</span>
+                <span class="toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="answer">
+                <div>
+                  {f.a.map((p) => (
+                    <p set:html={p} />
+                  ))}
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta faq-cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">Devamı bir sohbette</span>
+        <h2>Kendi dijital dünyanı nasıl kuracağımızı konuşalım.</h2>
+        <p>Markanı, hedef kitleni ve bugünkü dijital varlığını anlat; sana özel bir yol haritası çıkaralım.</p>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+</Base>
