@@ -100,7 +100,7 @@
 }
 .l3 {
   position: absolute;
-  left: 7%;
+  inset-inline-start: 7%;
   bottom: 11%;
   display: flex;
   flex-direction: column;
@@ -304,21 +304,28 @@
 .orbit .brand { color: var(--muted); transition: color .18s ease }
 .orbit .brand.hot { color: var(--amber) }
 .chips { display: flex; flex-wrap: wrap; gap: 6px }
-.chips span {
+.chips > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--mono);
   font-size: .68rem;
   letter-spacing: .06em;
   color: var(--muted);
   border: 1px solid var(--line);
   border-radius: 4px;
-  padding: 3px 8px;
+  padding: 3px 8px 3px 7px;
+  line-height: 1;
 }
-.chips span.more { color: var(--amber); border-color: rgba(232, 168, 73, .4) }
-.chips span.own {
+.chips > span.more { color: var(--amber); border-color: rgba(232, 168, 73, .4); padding-left: 8px }
+.chips > span.own {
   color: var(--fg);
   border-color: rgba(232, 168, 73, .55);
   background: rgba(232, 168, 73, .08);
+  padding-left: 8px;
 }
+.chips .chip-label { line-height: 1 }
+.chips .brand-ico { flex: none; display: block }
 @media (max-width: 960px) {
   .multi .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 72px }
 }

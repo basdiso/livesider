@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Head from '../components/Head.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { paths } from '../data/i18n';
+import { paths, htmlLang, htmlDir } from '../data/i18n';
 import type { Locale } from '../data/i18n';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
 const { locale, pageKey, title, description, jsonLd, bodyClass } = Astro.props;
 ---
 <!doctype html>
-<html lang={locale}>
+<html lang={htmlLang[locale]} dir={htmlDir[locale]}>
   <head>
     <Head locale={locale} pageKey={pageKey} title={title} description={description} jsonLd={jsonLd} />
     <slot name="head-extra" />

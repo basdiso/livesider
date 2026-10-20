@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import MailBlock from '../components/MailBlock.astro';
 import { meta, siteUrl, siteName, t } from '../data/i18n';
 import Orbit from '../components/Orbit.astro';
+import Chips from '../components/Chips.astro';
 import '../styles/home.css';
 
 const locale = 'tr' as const;
@@ -90,7 +91,7 @@ const jsonLd = {
             <li>Ana yayın her zaman kendi kanalınızda</li>
             <li>Yayın sonrası kayıt, klip ve arşiv</li>
           </ul>
-          <div class="chips" aria-label="Platformlar"><span class="own">WEB &amp; MOBİL APP</span><span>WHATSAPP</span><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 PLATFORM</span></div>
+          <Chips locale={locale} />
         </div>
         <div class="orbit" aria-hidden="true"><Orbit /></div>
       </div>

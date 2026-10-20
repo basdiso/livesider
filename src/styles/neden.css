@@ -300,7 +300,7 @@ table.cmp { width: 100%; min-width: 640px; border-collapse: collapse }
 }
 .sources ol {
   margin: 0;
-  padding-left: 1.4em;
+  padding-inline-start: 1.4em;
   display: flex;
   flex-direction: column;
   gap: 6px;

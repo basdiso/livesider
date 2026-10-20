@@ -1,0 +1,20 @@
+---
+import type { Platform } from '../data/platforms';
+
+interface Props {
+  platform: Platform;
+  size?: number;
+}
+const { platform, size = 12 } = Astro.props;
+const letter = platform.letter ?? '';
+const letterFontSize = letter.length > 1 ? 11 : 15;
+---
+<svg viewBox="0 0 24 24" width={size} height={size} class="brand-ico" aria-hidden="true" overflow="visible">
+  {platform.path && <path d={platform.path} fill="currentColor" />}
+  {!platform.path && platform.letter && (
+    <g>
+      <rect width="24" height="24" rx="4" fill="currentColor" />
+      <text x="12" y="17.5" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size={letterFontSize} fill="var(--bg)">{letter}</text>
+    </g>
+  )}
+</svg>

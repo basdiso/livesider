@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { Image } from 'astro:assets';
+import { meta, t } from '../../data/i18n';
+import kozmetikImg from '../../assets/kozmetik.jpg';
+import modaImg from '../../assets/moda.jpg';
+import mucevherImg from '../../assets/mucevher.jpg';
+import koleksiyonImg from '../../assets/koleksiyon.jpg';
+import '../../styles/ornekler.css';
+
+const locale = 'ar' as const;
+const page = meta.ornekler;
+---
+<Base locale={locale} pageKey="ornekler" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero show-hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">نماذج القنوات</span>
+          <h1>لكل قطاع لغته <em>الخاصة</em> على الهواء.</h1>
+        </div>
+        <div class="side">
+          <p>ملمس البشرة في التجميل، وحركة القماش في الأزياء، وضوء الحجر في المجوهرات. يُظهر كل مثال ما يُبث على الهواء جنبًا إلى جنب مع الكواليس التي تجعله ممكنًا.</p>
+          <nav class="jump" aria-label="القطاعات">
+            <a href="#kozmetik">التجميل</a>
+            <a href="#moda">الأزياء</a>
+            <a href="#mucevher">المجوهرات</a>
+            <a href="#koleksiyon">المقتنيات</a>
+          </nav>
+          <span class="disclaimer">العلامات والبرامج هي أمثلة مفاهيمية، معدّة لتُظهر كيف يمكن أن تبدو قناتك.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="mstrip">
+      <div class="wrap">
+        <span class="n">30</span>
+        <p>كل برنامج يُبث إلى 30 منصة في وقت واحد، إلى جانب موقع العلامة وتطبيقها.</p>
+        <a href="/ar#coklu-yayin">كيف يعمل البث متعدد المنصات</a>
+      </div>
+    </div>
+
+    <section class="show" id="kozmetik">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">التجميل · العناية بالبشرة</span>
+            <h2>Skin Ritual <span class="brand">· Velare</span></h2>
+          </div>
+          <div class="meta"><span class="slot">الثلاثاء 20:00</span><span>30 د · أسبوعي</span><span>استوديو متوسط</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={kozmetikImg} alt="بث مباشر لـ Velare Skin Ritual: مقدمتان تعرضان سيروم مع لقطة قريبة لملمس البشرة وبطاقة سعر في الزاوية؛ الكواليس وغرفة التحكم والمكياج على اليمين" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="eager" />
+          <figcaption><a href="/img/kozmetik.jpg" target="_blank" rel="noopener">الحجم الكامل</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">الصيغة</span><p>برنامج عناية بالبشرة أسبوعي مع خبير ومُقدِّم ضيف. تغطي كل حلقة منتجًا واحدًا وروتينًا واحدًا؛ تُجاب أسئلة المشاهدين على الهواء.</p></div>
+          <div class="onair"><span class="k">على الهواء</span><ul><li>كاميرا ماكرو مُدخَلة تُظهر الملمس</li><li>بطاقة منتج وسعر، نقرة واحدة للسلة</li><li>شريط سفلي باسم الحلقة</li></ul></div>
+          <div><span class="k">الكواليس</span><ul><li>كاميرا منتج ماكرو على منزلق</li><li>غرفة تحكم متعددة العرض وswitcher</li><li>مكياج في الموقع وطاولة منتج</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="moda">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">الأزياء · الجاهز للارتداء</span>
+            <h2>New Season Edit <span class="brand">· Maison Éla</span></h2>
+          </div>
+          <div class="meta"><span class="slot">الخميس 19:00</span><span>45 د · سلسلة موسمية</span><span>استوديو كبير</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={modaImg} alt="بث مباشر لـ Maison Éla New Season Edit: مصممة أزياء تشرح بينما تمشي عارضة بفستان من الكتان، بطاقة منتج على الشاشة؛ استوديو متعدد الكاميرات وغرفة تحكم وتجهيز الأزياء على اليمين" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/moda.jpg" target="_blank" rel="noopener">الحجم الكامل</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">الصيغة</span><p>برنامج موسمي تُقدِّمه خبيرة أناقة بينما تمشي عارضة مباشرة. حركة القماش ونصائح التنسيق تمنح ما لا تمنحه صورة الكتالوج الثابتة.</p></div>
+          <div class="onair"><span class="k">على الهواء</span><ul><li>ممر صغير وخلفية منحنية</li><li>بطاقة منتج مع اختيار المقاس</li><li>شريط سفلي للموسم والحلقة</li></ul></div>
+          <div><span class="k">الكواليس</span><ul><li>ثلاث كاميرات وsoftboxes وإضاءة بارابولية</li><li>غرفة تحكم ومكتب صوت، مشغلان</li><li>منطقة ملابس وكي ومكياج</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="mucevher">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">المجوهرات · الألماس</span>
+            <h2>Diamond Hour <span class="brand">· Luméa</span></h2>
+          </div>
+          <div class="meta"><span class="slot">الجمعة 21:00</span><span>40 د · أسبوعي</span><span>استوديو متوسط</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={mucevherImg} alt="بث مباشر لـ Luméa Diamond Hour: خبير وضيف يفحصان خاتم سوليتير مع لقطة ماكرو للحجر وبطاقة قيراط-سعر في الزاوية؛ طاولة منتج ماكرو، غرفة تحكم ومعالجة منتج بقفازات على اليمين" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/mucevher.jpg" target="_blank" rel="noopener">الحجم الكامل</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">الصيغة</span><p>اختيار الأحجار والتصاميم بصحبة خبير. للمنتجات عالية القيمة، تُبنى الثقة على الشاشة بلقطات قريبة ومعلومات واضحة ونبرة حوار هادئة.</p></div>
+          <div class="onair"><span class="k">على الهواء</span><ul><li>لقطة ماكرو للحجر تلتقط الضوء</li><li>بطاقة منتج مع القيراط والسعر</li><li>إضاءة خافتة ودافئة ومُتحكَّم بها</li></ul></div>
+          <div><span class="k">الكواليس</span><ul><li>خيمة إضاءة وطاولة دوارة وكاميرا ماكرو</li><li>غرفة تحكم متعددة العرض</li><li>خزنة ومعالجة منتج بقفازات</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="show" id="koleksiyon">
+      <div class="wrap">
+        <div class="show-head">
+          <div class="t">
+            <span class="eyebrow">المقتنيات · السبح والساعات</span>
+            <h2>Collector's Table <span class="brand">· Novar</span></h2>
+          </div>
+          <div class="meta"><span class="slot">الأحد 20:30</span><span>60 د · مزاد مباشر</span><span>مضغوط · غرفة واحدة</span></div>
+        </div>
+        <figure class="frame">
+          <Image src={koleksiyonImg} alt="بث مباشر لـ Novar Collector's Table: جامعان يعرضان سبحة من الكهرمان وساعة مع لقطة ماكرو للكهرمان وبطاقة سعر في الزاوية؛ تصوير ماكرو على صندوق إضاءة وغرفة تحكم مضغوطة وتجهيز المكان على اليمين" widths={[800, 1200, 1600, 2000]} sizes="(min-width: 1280px) 1240px, 100vw" loading="lazy" />
+          <figcaption><a href="/img/koleksiyon.jpg" target="_blank" rel="noopener">الحجم الكامل</a></figcaption>
+        </figure>
+        <div class="spec">
+          <div><span class="k">الصيغة</span><p>برنامج مجتمعي يتحدث فيه الجامعون ويروون قصة كل قطعة وتُباع عبر مزاد مباشر. يمكن تشغيله في غرفة واحدة بفريق صغير.</p></div>
+          <div class="onair"><span class="k">على الهواء</span><ul><li>لقطة ماكرو تكشف داخل الكهرمان</li><li>بطاقة سعر وعرض مباشر</li><li>مكان دافئ بألوان الخشب والنحاس</li></ul></div>
+          <div><span class="k">الكواليس</span><ul><li>تصوير ماكرو على صندوق إضاءة</li><li>غرفة تحكم مضغوطة، شاشتان</li><li>تجهيز المكان والمقدم قبل البث</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta show-cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">اجعل النموذج التالي قناتك</span>
+        <h2>لنصمم حلقة تجريبية لعلامتك.</h2>
+        <p>أخبرنا عن قطاعك ومكانك، وسنخطط لصيغة ومكان وكواليس مصممة لك.</p>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+</Base>

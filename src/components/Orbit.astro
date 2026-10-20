@@ -1,16 +1,11 @@
 ---
-import {
-  siYoutube, siInstagram, siFacebook, siTiktok, siX,
-  siTwitch, siKick, siVimeo, siDailymotion, siWhatsapp,
-} from 'simple-icons';
+import { ORBIT_PLATFORMS } from '../data/platforms';
+import BrandIcon from './BrandIcon.astro';
 
 const CX = 280, CY = 280, R = 228;
-const N = 30;
-
-const BRANDS = [
-  siYoutube, siInstagram, siFacebook, null, siTiktok,
-  siX, siTwitch, siKick, siVimeo, siDailymotion,
-] as const;
+const LABEL_COUNT = ORBIT_PLATFORMS.length;
+const EVERY = 3;
+const N = LABEL_COUNT * EVERY;
 
 const points = Array.from({ length: N }, (_, i) => {
   const a = -Math.PI / 2 + (i * 2 * Math.PI) / N;
@@ -26,7 +21,7 @@ const points = Array.from({ length: N }, (_, i) => {
     <line x1={CX} y1={CY} x2={p.x} y2={p.y} class="ray" />
   ))}
   {points.map((p, j) => (
-    <circle cx={p.x} cy={p.y} r={j % 3 === 0 ? 9 : 6} class="pt" />
+    <circle cx={p.x} cy={p.y} r={j % EVERY === 0 ? 9 : 6} class="pt" />
   ))}
 
   <circle cx={CX} cy={CY} r="96" fill="none" stroke="var(--line)" stroke-dasharray="3 5" />
@@ -37,22 +32,15 @@ const points = Array.from({ length: N }, (_, i) => {
   </foreignObject>
 
   {points.map((p, j) => {
-    if (j % 3 !== 0) return null;
-    const idx = j / 3;
-    const brand = BRANDS[idx];
+    if (j % EVERY !== 0) return null;
+    const idx = j / EVERY;
+    const platform = ORBIT_PLATFORMS[idx];
+    if (!platform) return null;
     const lx = CX + (R + 36) * Math.cos(p.angle);
     const ly = CY + (R + 36) * Math.sin(p.angle);
-    if (!brand) {
-      return (
-        <g class="brand" transform={`translate(${lx - 11},${ly - 11})`} aria-label="LinkedIn">
-          <rect width="22" height="22" rx="3.5" fill="currentColor" />
-          <text x="11" y="16" text-anchor="middle" font-size="13" font-weight="800" font-family="Archivo, Arial, sans-serif" fill="var(--bg)">in</text>
-        </g>
-      );
-    }
     return (
-      <g class="brand" transform={`translate(${lx - 11},${ly - 11})`} aria-label={brand.title}>
-        <path d={brand.path} transform="scale(0.9167)" fill="currentColor" />
+      <g class="brand" transform={`translate(${lx - 11},${ly - 11})`} aria-label={platform.label.en}>
+        <BrandIcon platform={platform} size={22} />
       </g>
     );
   })}

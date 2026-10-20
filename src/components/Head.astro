@@ -1,5 +1,5 @@
 ---
-import { siteUrl, siteName, ogLocale, hreflangFor, paths } from '../data/i18n';
+import { siteUrl, siteName, ogLocaleMap, hreflangFor, paths, LOCALES } from '../data/i18n';
 import type { Locale } from '../data/i18n';
 
 interface Props {
@@ -22,7 +22,7 @@ const defaultJsonLd = {
   url: canonical,
   name: title,
   description,
-  inLanguage: locale === 'tr' ? 'tr-TR' : 'en-US',
+  inLanguage: locale === 'tr' ? 'tr-TR' : locale === 'en' ? 'en-US' : 'ar-SA',
   isPartOf: {
     '@type': 'WebSite',
     '@id': siteUrl + '/#website',
@@ -52,6 +52,8 @@ const orgLd = {
   areaServed: 'Worldwide',
   description: 'Livesider helps brands build and run their own broadcast channels.',
 };
+
+const altLocales = LOCALES.filter((l) => l !== locale);
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -71,8 +73,10 @@ const orgLd = {
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content="website" />
-<meta property="og:locale" content={ogLocale(locale)} />
-<meta property="og:locale:alternate" content={ogLocale(locale === 'tr' ? 'en' : 'tr')} />
+<meta property="og:locale" content={ogLocaleMap[locale]} />
+{altLocales.map((l) => (
+  <meta property="og:locale:alternate" content={ogLocaleMap[l]} />
+))}
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />

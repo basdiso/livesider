@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { meta, t } from '../../data/i18n';
+import '../../styles/neden.css';
+
+const locale = 'ar' as const;
+const page = meta.neden;
+---
+<Base locale={locale} pageKey="neden" title={t(page.title, locale)} description={t(page.description, locale)}>
+  <main>
+    <section class="hero why">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">لماذا قناتك الخاصة</span>
+          <h1 style="margin-top:18px">على وسائل التواصل أنت <em>مستأجر.</em> أما على قناتك فأنت صاحب الدار.</h1>
+        </div>
+        <div class="side">
+          <p>متابعوك ووصولك وحتى حسابك تخضع لقوانين المنصة. القناة الخاصة هي المكان الذي تبني فيه العلامة علاقة مباشرة ومستمرة وقابلة للقياس مع جمهورها. تصبح وسائل التواصل الاجتماعي واجهة لهذه القناة، لا بديلًا عنها.</p>
+          <div class="quote">هدف القناة ليس أن تُشاهَد؛ بل أن تحوِّل المشاهد إلى عميل، والعميل إلى مجتمع.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rent">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rent"><span class="kicker">01</span>الفرق بين الإيجار والتملك</h2>
+          <p>كل من حساب التواصل الاجتماعي والقناة المملوكة ينشر فيديو. الفرق يكمن في من يحتفظ بالجمهور والبيانات والمبيعات.</p>
+        </div>
+        <div class="tbl-scroll">
+          <table class="cmp">
+            <thead><tr><th scope="col"></th><th scope="col">حساب التواصل الاجتماعي</th><th scope="col" class="own-col">قناة العلامة الخاصة</th></tr></thead>
+            <tbody>
+              <tr><td>الجمهور</td><td>للمنصة. الخوارزمية تقرر من يرى ماذا ومتى.</td><td class="own">للعلامة. يُوصل إليه مباشرة عبر الاشتراك والإشعار والبريد.</td></tr>
+              <tr><td>البيانات</td><td>إحصاءات موجزة. هوية المشاهد تبقى غالبًا خفية.</td><td class="own">بيانات طرف أول: من شاهد، وكم بقي، وأي شيء ضغط، وماذا اشترى.</td></tr>
+              <tr><td>الصيغة</td><td>المحتوى القصير العمودي يُكافأ. السرد الطويل يُدفَن.</td><td class="own">كل ما يتطلبه المنتج: بث مباشر 60 دقيقة، عرض 3 دقائق، سلاسل متكررة.</td></tr>
+              <tr><td>المبيعات</td><td>متجر منصة بعمولة، أو نقرة للخروج إلى الموقع.</td><td class="own">داخل البث: بطاقات منتج، سلة، مواعيد، طلبات عرض.</td></tr>
+              <tr><td>الأرشيف</td><td>يضيع في التدفق. إذا أُغلق الحساب، يذهب كل شيء.</td><td class="own">مكتبة قابلة للبحث. كل بث يتحول إلى أصل دائم.</td></tr>
+              <tr><td>الانطباع</td><td>ينافس المنافسين والمحتوى الترفيهي في التدفق نفسه.</td><td class="own">استوديو العلامة وجدولها الخاص. تبدو كمؤسسة.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-hub">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-hub"><span class="kicker">02</span>وسائل التواصل تغذي القناة</h2>
+          <p>القناة الخاصة لا تعني ترك وسائل التواصل. على العكس، تبني مركزًا يُغذي وسائل التواصل بمحتوى منتظم وعالي الجودة أسبوعيًا.</p>
+        </div>
+        <div>
+          <div class="flow">
+            <div class="fnode"><span class="k">المصدر</span><span class="big">60 د</span><h3>بث مباشر واحد</h3><p>برنامج أسبوعي من الاستوديو، أو إطلاق، أو حوار مع خبير.</p></div>
+            <div class="fnode"><span class="k">المضاعفة</span><span class="big">×15</span><h3>مقاطع قصيرة</h3><p>أقوى اللحظات تُقص وتُترجم وتُحوَّل إلى صيغة عمودية.</p></div>
+            <div class="fnode"><span class="k">التوزيع</span><span class="big">4+</span><h3>منصات اجتماعية</h3><p>إنستغرام، يوتيوب، لينكد إن وغيرها. كل مقطع يُعيد المشاهد إلى البث الكامل.</p></div>
+            <div class="fnode home"><span class="k">المركز</span><span class="big">1</span><h3>قناة وتطبيق خاصان</h3><p>هنا يسجل المشاهد، يفحص المنتج، يشتري أو يحجز موعدًا.</p></div>
+          </div>
+          <div class="flow-return">البيانات المجمعة تحدد موضوع البث التالي</div>
+        </div>
+        <p class="note">بدلًا من إنتاج محتوى من الصفر على وسائل التواصل كل أسبوع، يُنتج بث واحد قوي تدفقًا كاملًا لأسبوع. وميزانيات الإعلان تُنفَق على المقاطع التي تجلب حركة إلى القناة، لا على منشورات متفرقة.</p>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-world">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-world"><span class="kicker">03</span>التجارة المباشرة حول العالم</h2>
+          <p>البيع عبر الفيديو المباشر أصبح أحد المحركات الرئيسية للتجارة الإلكترونية في الصين، وينمو بسرعة في الولايات المتحدة وأوروبا. الأرقام تقول شيئًا واحدًا: العرض المباشر يبيع أفضل بكثير من صفحة المنتج الساكنة.</p>
+        </div>
+        <div class="stats">
+          <div class="stat hl"><span class="v">$807<small>مليار</small></span><p>مبيعات التجارة الإلكترونية عبر البث المباشر في الصين عام 2024. حقق البث المباشر ما يُقدَّر بـ 80% من النمو الإضافي للقطاع.</p><span class="src">USDA ATO SHANGHAI · iRESEARCH <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat"><span class="v">833<small>مليون</small></span><p>مشاهدو البث المباشر في الصين (ديسمبر 2024)، أي نحو 75% من مستخدمي الإنترنت في البلاد.</p><span class="src">USDA ATO SHANGHAI <sup><a href="#k1">[1]</a></sup></span></div>
+          <div class="stat hl"><span class="v">~30%</span><p>معدلات التحويل في التجارة المباشرة، تصل إلى عشرة أضعاف التجارة الإلكترونية التقليدية. دوغلاس الألمانية تُبلّغ عن نسب تصل إلى 40%.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+          <div class="stat"><span class="v">$8<small>مليار+</small></span><p>حجم المبيعات المباشرة لـ Whatnot عام 2025، ارتفاعًا من أكثر من 3 مليار دولار عام 2024. ووصلت الشركة إلى تقييم 20 مليار دولار في أغسطس 2026.</p><span class="src">VALUE ADDED RESOURCE <sup><a href="#k3">[3]</a></sup></span></div>
+          <div class="stat"><span class="v">$15.1<small>مليار</small></span><p>حجم مبيعات TikTok Shop في الولايات المتحدة عام 2025، بزيادة 68% في عام. وارتفعت حصة البث المباشر من 10% إلى 14%.</p><span class="src">MOMENTUM WORKS <sup><a href="#k4">[4]</a></sup></span></div>
+          <div class="stat"><span class="v">×7</span><p>أول تجربة تسوق مباشر لـ Walmart جذبت سبعة أضعاف الجمهور المتوقع ونمت قاعدة متابعيها بنسبة 25%.</p><span class="src">McKINSEY <sup><a href="#k2">[2]</a></sup></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-models">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-models"><span class="kicker">04</span>نماذج أعمال غيّرت القواعد</h2>
+          <p>البيع المباشر ليس نموذجًا واحدًا. الأمثلة الناجحة حول العالم تسير في خمسة مسارات مختلفة، وكل منها يُعلِّم العلامة شيئًا.</p>
+        </div>
+        <div class="models">
+          <article class="model">
+            <div class="who"><h3>Taobao Live · Douyin</h3><span>الصين · تطبيق خارق</span></div>
+            <p>الفيديو والدردشة والسلة والدفع في شاشة واحدة. يشتري المشاهد دون أن يترك البث. سجّل Taobao Live صفقات بقيمة 7.5 مليار دولار في النصف ساعة الأول من عروض Singles' Day عام 2020.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>الدرس</b>كل خطوة بين المشاهدة والشراء هي خسارة مبيعات.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Whatnot</h3><span>الولايات المتحدة · سوق مجتمعي</span></div>
+            <p>مزادات مباشرة في أسواق متخصصة شغوفة كبطاقات التحصيل والألعاب والبضائع المستعملة. يتحول البائع إلى مُقدِّم ويتحول التسوق إلى حدث. يدّعي امتلاك نحو 60% من سوق التسوق المباشر في أمريكا الشمالية وأوروبا.<sup><a href="#k3">[3]</a></sup></p>
+            <p class="lesson"><b>الدرس</b>المجتمع المبني على الخبرة والشغف يبيع أقوى من أي تخفيض.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Red Bull Media House</h3><span>النمسا · العلامة كناشر</span></div>
+            <p>بنت علامة مشروبات شركة إنتاج أفلام وتلفزيون ومجلات وبث رقمي خاصة بها. لا تحكي قصة المنتج بل قصة عالم المنتج، وأصبح المحتوى أصلًا يُشاهَد ويُرخَّص بذاته.</p>
+            <p class="lesson"><b>الدرس</b>المشاهد يتخطى الإعلانات، لكنه يبحث عن البرامج الجيدة.</p>
+          </article>
+          <article class="model">
+            <div class="who"><h3>Douglas · Walmart</h3><span>تجزئة · قناة خاصة</span></div>
+            <p>نقل كبار التجار الفيديو المباشر إلى مواقعهم وتطبيقاتهم: خبير منتج يعرض مباشرة ويجيب الأسئلة، والمشاهد يضيف إلى السلة في الشاشة نفسها. دوغلاس تُبلّغ عن تحويلات تصل إلى 40%.<sup><a href="#k2">[2]</a></sup></p>
+            <p class="lesson"><b>الدرس</b>مستشار المبيعات الممتاز في المتجر يصل إلى آلاف الأشخاص في وقت واحد عبر الشاشة.</p>
+          </article>
+          <article class="model wide">
+            <div class="who"><h3>QVC · HSN</h3><span>منذ الثمانينيات · التسوق التلفزيوني</span></div>
+            <p>البيع عبر الفيديو المباشر ليس فكرة جديدة. قنوات التسوق التلفزيونية تعمل بالصيغة نفسها لعقود: مُقدِّم موثوق، لقطات قريبة للمنتج، كميات محدودة، ولحظة اطلب الآن. ما تغيّر هو التقنية. اليوم تعمل الصيغة نفسها داخل تطبيق العلامة بدلًا من قناة قمر صناعي، بجزء بسيط من الكلفة ومع تفاعل ثنائي الاتجاه.</p>
+            <p class="lesson"><b>الدرس</b>صيغة مُثبتة تلتقي ببنية تحتية جديدة وفي المتناول. وهنا تكمن الفرصة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block alt" aria-labelledby="h-rundown">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-rundown"><span class="kicker">05</span>نموذج لجدول بث أسبوعي</h2>
+          <p>القناة تعمل عندما تكون منتظمة. هذا الجدول نقطة بداية تتكيف مع أي قطاع، وتسير على ساعات استوديو قليلة في الأسبوع.</p>
+        </div>
+        <div class="rundown" role="table" aria-label="جدول البث">
+          <div class="rd-head" role="row"><span role="columnheader">اليوم</span><span role="columnheader">الصيغة</span><span role="columnheader">المحتوى</span><span role="columnheader">الهدف</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">الاثنين 20:00</span><h3 role="cell">إطلاق الأسبوع</h3><p role="cell">يُعرض منتج أو مجموعة جديدة مباشرة؛ يسأل المشاهدون وتُؤخذ الطلبات الأولى المحدودة على الهواء.</p><span class="goal" role="cell">مبيعات · تحويل</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">الثلاثاء</span><h3 role="cell">خلف الصناعة</h3><p role="cell">ورشة أو مصنع أو مطبخ: وثائقي قصير يُظهر كيف يُصنع المنتج والحرفية وراءه.</p><span class="goal" role="cell">ثقة · قيمة مُدركة</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">الأربعاء 21:00</span><h3 role="cell">حوار الخبراء</h3><p role="cell">محادثة 30 دقيقة مع ضيف من القطاع: اتجاهات، كيفية الاختيار الجيد، الأخطاء الشائعة.</p><span class="goal" role="cell">سلطة · بحث</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">الخميس</span><h3 role="cell">قصة عميل</h3><p role="cell">صلة عميل حقيقي بالمنتج؛ بموافقته، قصيرة وصادقة.</p><span class="goal" role="cell">دليل اجتماعي</span></div>
+          <div class="rd-row live" role="row"><span class="slot" role="cell">الجمعة 19:00</span><h3 role="cell">أسئلة وأجوبة مباشرة</h3><p role="cell">الأسئلة التي وصلت خلال الأسبوع تُجاب على الهواء: العناية، الاستخدام، السعر، والعروض.</p><span class="goal" role="cell">مجتمع · ولاء</span></div>
+          <div class="rd-row" role="row"><span class="slot" role="cell">يوميًا</span><h3 role="cell">مقاطع</h3><p role="cell">مقاطع قصيرة مقتطفة من بثوث الأسبوع تذهب إلى وسائل التواصل وتعيد الجمهور إلى القناة.</p><span class="goal" role="cell">وصول · حركة</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="h-next">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-next"><span class="kicker">06</span>المرحلة المقبلة للتسويق الرقمي</h2>
+          <p>الاتجاهات التي ستُشكّل التسويق في السنوات المقبلة تشير كلها إلى الاتجاه نفسه: العلامة التي تملك بياناتها ومحتواها وجمهورها هي الرابحة.</p>
+        </div>
+        <div class="next">
+          <div class="nx"><h3>بيانات الطرف الأول هي الذهب</h3><p>مع تراجع الكوكيز والتتبع من طرف ثالث، تشتري العلامات التي تعرف عملاءها مباشرة إعلانات أكثر دقة وأقل كلفة. القناة الخاصة تجمع هذه البيانات بشكل طبيعي.</p></div>
+          <div class="nx"><h3>الذكاء الاصطناعي يُضاعف المحتوى</h3><p>التحرير والترجمة والترجمة الفورية الآلية يمكن أن تحوّل بثًا واحدًا إلى عشرات المقاطع واللغات والمنصات في دقائق.</p></div>
+          <div class="nx"><h3>البحث ينتقل إلى الفيديو والذكاء الاصطناعي</h3><p>الناس الآن يطرحون أسئلتهم على منصات الفيديو ومساعدي الذكاء الاصطناعي. المحتوى الخبير المنتظم بلغة واضحة يجعل العلامة مرئية في هذه الأنواع الجديدة من البحث.</p></div>
+          <div class="nx"><h3>الثقة هي عملة المبيعات الجديدة</h3><p>أشخاص حقيقيون ومنتج حقيقي وأسئلة مباشرة بدلًا من صور إعلانية مُنمَّقة. الفيديو المباشر يوصل إحساس صدق لا يمكن إخراجه.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">للبدء</span>
+        <h2>لنصمم قناتك معًا.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="h-src">
+      <div class="wrap">
+        <span class="eyebrow" id="h-src">المصادر</span>
+        <ol>
+          <li id="k1"><a href="https://chilealimentos.com/wp-content/uploads/2025/12/Selling-in-China-The-Rise-of-Livestreaming-E-commerce_Shanghai-ATO_China-Peoples-Republic-of_CH2025-0229.pdf" target="_blank" rel="noopener">USDA ATO Shanghai — Selling in China: The Rise of Livestreaming E-commerce (2025)</a></li>
+          <li id="k2"><a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/its-showtime-how-live-commerce-is-transforming-the-shopping-experience" target="_blank" rel="noopener">McKinsey — It's showtime! How live commerce is transforming the shopping experience</a></li>
+          <li id="k3"><a href="https://valueaddedresource.net/whatnot-20-billion-valuation/" target="_blank" rel="noopener">Value Added Resource — Whatnot Raises $545 Million At $20 Billion Valuation (2026)</a></li>
+          <li id="k4"><a href="https://thelowdown.momentum.asia/new-report-tiktok-shop-u-s-gmv-grew-68-to-reach-us15-1b-in-2025/" target="_blank" rel="noopener">Momentum Works — TikTok Shop U.S. GMV grew 68% to reach US$15.1B in 2025</a></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</Base>

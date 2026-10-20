@@ -1,0 +1,176 @@
+---
+import Base from '../../layouts/Base.astro';
+import MailBlock from '../../components/MailBlock.astro';
+import { meta, siteUrl, siteName, t } from '../../data/i18n';
+import Orbit from '../../components/Orbit.astro';
+import Chips from '../../components/Chips.astro';
+import '../../styles/home.css';
+
+const locale = 'ar' as const;
+const page = meta.home;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': siteUrl + '/#website',
+  url: siteUrl,
+  name: siteName,
+  description: t(page.description, locale),
+  inLanguage: 'ar-SA',
+  publisher: { '@id': siteUrl + '/#org' },
+};
+---
+<Base locale={locale} pageKey="home" title={t(page.title, locale)} description={t(page.description, locale)} jsonLd={jsonLd}>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="copy">
+          <span class="eyebrow">قنوات بث مؤسسية</span>
+          <h1>تقنية البث <em>الخاصة</em> بعلامتك.</h1>
+          <p class="lede">من الاستوديو إلى الخادم، ومن الكاميرا إلى تطبيق الهاتف. نحن فريق صغير يساعد الشركات على بناء قنوات البث الخاصة بها وتشغيلها.</p>
+          <a href="#coklu-yayin" class="live-note"><span class="rec" aria-hidden="true"></span>استوديو واحد، بث متزامن إلى 30 منصة</a>
+          <div class="cta-row">
+            <a class="btn primary" href="/ar/showcase"><span class="rec" aria-hidden="true"></span>شاهد نماذج القنوات</a>
+            <a class="btn ghost" href="/ar/why">لماذا قناتك الخاصة؟</a>
+          </div>
+        </div>
+
+        <div class="rig" role="img" aria-label="شاشة البرنامج والعرض متعدد المصادر">
+          <div class="monitor">
+            <div class="mon-bar">
+              <div class="left"><span>PGM</span><span class="pill onair">على الهواء</span></div>
+              <span><span class="tc" id="tc">00:00:00:00</span> · 25p</span>
+            </div>
+            <div class="screen-row">
+              <div class="screen" id="pgm-screen">
+                <canvas id="pgm" aria-hidden="true"></canvas>
+                <div class="safe" aria-hidden="true"></div>
+                <div class="l3" aria-hidden="true">
+                  <span class="name">استوديو A · بث مباشر</span>
+                  <span class="sub">LIVESIDER · 1080p · HLS / SRT</span>
+                </div>
+              </div>
+              <div class="meters" aria-hidden="true"><div class="meter"><i id="mL"></i></div><div class="meter"><i id="mR"></i></div></div>
+            </div>
+          </div>
+          <div class="multiview" aria-hidden="true">
+            <div class="tile pvw"><div class="screen"><canvas id="pvw"></canvas></div><span><b>PVW</b><em style="font-style:normal">BARS</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam1"></canvas></div><span>CAM 1<em style="font-style:normal">WIDE</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam2"></canvas></div><span>CAM 2<em style="font-style:normal">CU</em></span></div>
+            <div class="tile"><div class="screen"><canvas id="cam3"></canvas></div><span>CAM 3<em style="font-style:normal">PTZ</em></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chain" aria-label="سلسلة البث">
+      <div class="wrap">
+        <span class="eyebrow">سلسلة بث متكاملة من الاستوديو إلى المشاهد</span>
+        <div class="chain-scroll">
+          <div class="chain-track">
+            <span class="pulse" aria-hidden="true"></span>
+            <div class="node"><b>الاستوديو</b><small>كاميرا · إضاءة · صوت</small></div>
+            <div class="node"><b>غرفة التحكم</b><small>switcher · رسوميات</small></div>
+            <div class="node"><b>Encoder</b><small>H.264 / HEVC</small></div>
+            <div class="node"><b>الخادم</b><small>SRT · RTMP · VOD</small></div>
+            <div class="node"><b>CDN</b><small>HLS · ABR</small></div>
+            <div class="node live"><b>الويب والجوال</b><small>الجمهور</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="multi" id="coklu-yayin" aria-labelledby="multi-h">
+      <div class="wrap">
+        <div class="txt">
+          <span class="eyebrow">بث متعدد المنصات</span>
+          <h2 id="multi-h" class="big">30<small>منصة في وقت واحد</small></h2>
+          <p>بث واحد يخرج من الاستوديو يصل إلى 30 منصة في آنٍ واحد، إلى جانب موقع العلامة وتطبيقها. دون الحاجة إلى فريق منفصل أو تصوير إضافي أو ميزانية لكل منصة.</p>
+          <ul>
+            <li>بث مباشر على جميع المنصات معًا</li>
+            <li>التعليقات مجمعة في لوحة واحدة</li>
+            <li>البث الرئيسي يبقى دائمًا على قناتك</li>
+            <li>تسجيل ومقاطع وأرشيف بعد البث</li>
+          </ul>
+          <Chips locale={locale} />
+        </div>
+        <div class="orbit" aria-hidden="true"><Orbit /></div>
+      </div>
+    </section>
+
+    <section class="block" id="hizmetler">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>كل طبقة من القناة، تحت سقف فريق واحد.</h2>
+          <p>قناة الشركة ليست مجرد كاميرا. الصيغة والاستوديو والبنية التحتية والتوزيع يجب أن تعمل معًا حتى تدوم القناة. نخطط لها كلها كوحدة واحدة.</p>
+        </div>
+        <div class="services">
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="9" width="32" height="20" rx="2"/><path d="M14 34h12M20 29v5"/><circle cx="29.5" cy="13.5" r="1.8" fill="var(--tally)" stroke="none"/></svg>
+            <h3>إطلاق القناة</h3>
+            <p>هوية القناة وجدول البث والانطلاق. يصبح موقع العلامة وتطبيق الجوال واجهتها الأساسية.</p>
+            <div class="tags"><span>WEB</span><span>MOBILE</span><span>LIVE + VOD</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="13" width="20" height="15" rx="2"/><path d="M25 18l9-5v15l-9-5"/><circle cx="15" cy="20.5" r="4"/></svg>
+            <h3>تخطيط الاستوديو والمعدات</h3>
+            <p>كاميرات وإضاءة وصوت وصوتيات بالمقاس المناسب لكل صيغة. نحن نكتب المواصفات، والشراء يبقى شفافًا.</p>
+            <div class="tags"><span>كاميرا</span><span>إضاءة</span><span>صوت</span><span>صوتيات</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="6" width="26" height="8" rx="1.5"/><rect x="7" y="16" width="26" height="8" rx="1.5"/><rect x="7" y="26" width="26" height="8" rx="1.5"/><path d="M12 10h2M12 20h2M12 30h2"/></svg>
+            <h3>البنية التحتية للبث</h3>
+            <p>Encoders وخوادم بث وCDN ومعدل بت تكيفي. يصمد البث أينما كان الجمهور.</p>
+            <div class="tags"><span>SRT</span><span>RTMP</span><span>HLS</span><span>ABR</span></div>
+          </article>
+          <article class="svc">
+            <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="8" width="32" height="22" rx="2"/><path d="M8 24h14" stroke-width="3"/><path d="M8 19h9"/></svg>
+            <h3>الصيغة والمحتوى</h3>
+            <p>بنية البرامج ولغة التقديم والرسوم والترجمات. نُدخل انضباط البث إلى فريقك.</p>
+            <div class="tags"><span>صيغة</span><span>رسوم</span><span>ترجمة ذكية</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="surec">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>من الفكرة إلى الهواء.</h2>
+          <p>كل قناة تمر بالخطوات الأربع نفسها. السرعة تتغير حسب المكان والصيغة، أما الترتيب فلا.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="n">01 · اكتشاف</span><h3>التعارف</h3><p>نتعرف عن قرب على العلامة والجمهور المستهدف والمكان الذي سيُبث منه.</p></div>
+          <div class="step"><span class="n">02 · صيغة</span><h3>بنية البرامج</h3><p>نقرر معًا البرامج التي ستُنتج وجدول البث الأسبوعي.</p></div>
+          <div class="step"><span class="n">03 · إعداد</span><h3>التركيب</h3><p>نُنشئ الاستوديو والخادم والبنية الرقمية ونُدرِّب فريقك.</p></div>
+          <div class="step"><span class="n">04 · بث</span><h3>الانطلاق والتشغيل</h3><p>نطلق القناة معك ونستمر في تشغيلها وتطويرها.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="own" aria-labelledby="own-h">
+      <div class="wrap">
+        <h2 id="own-h">القناة لك.</h2>
+        <div>
+          <p>كل ما نبنيه يخص العلامة. نحن نُنشئ ونُشغِّل ونطوِّر، والمفاتيح تبقى دائمًا بيدك.</p>
+          <ul>
+            <li>حسابات القناة واسم النطاق باسم العلامة</li>
+            <li>المعدات والتراخيص تُشترى بشفافية لصالح العلامة</li>
+            <li>توزيعك الخاص، غير مقيَّد بمنصة واحدة</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="wrap">
+        <span class="eyebrow">تواصل</span>
+        <h2>لنتحدث عن قناتك.</h2>
+        <MailBlock locale={locale} />
+      </div>
+    </section>
+  </main>
+  <script>
+    import '../../scripts/home-rig';
+    import '../../scripts/orbit';
+  </script>
+</Base>

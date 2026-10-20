@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import MailBlock from '../../components/MailBlock.astro';
 import { meta, siteUrl, siteName, t } from '../../data/i18n';
 import Orbit from '../../components/Orbit.astro';
+import Chips from '../../components/Chips.astro';
 import '../../styles/home.css';
 
 const locale = 'en' as const;
@@ -90,7 +91,7 @@ const jsonLd = {
             <li>The main stream always lives on your channel</li>
             <li>Recording, clips and archive after the show</li>
           </ul>
-          <div class="chips" aria-label="Platforms"><span class="own">WEB &amp; MOBILE APP</span><span>WHATSAPP</span><span>YOUTUBE</span><span>INSTAGRAM</span><span>FACEBOOK</span><span>LINKEDIN</span><span>TIKTOK</span><span>X</span><span>TWITCH</span><span>KICK</span><span>VIMEO</span><span>DAILYMOTION</span><span class="more">+ 20 MORE</span></div>
+          <Chips locale={locale} />
         </div>
         <div class="orbit" aria-hidden="true"><Orbit /></div>
       </div>

@@ -1,0 +1,18 @@
+---
+import { PLATFORMS } from '../data/platforms';
+import BrandIcon from './BrandIcon.astro';
+import type { Locale } from '../data/i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+<div class="chips" aria-label={locale === 'tr' ? 'Platformlar' : 'Platforms'}>
+  {PLATFORMS.map((p) => (
+    <span class={p.variant}>
+      {!p.variant && <BrandIcon platform={p} size={11} />}
+      <span class="chip-label">{p.label[locale]}</span>
+    </span>
+  ))}
+</div>

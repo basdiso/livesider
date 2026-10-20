@@ -2,6 +2,9 @@
 @import '@fontsource/ibm-plex-sans/400.css';
 @import '@fontsource/ibm-plex-sans/500.css';
 @import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/700.css';
 @import '@fontsource-variable/jetbrains-mono/index.css';
 
 :root {
@@ -15,9 +18,9 @@
   --amber: #e8a849;
   --tally: #ff2a2a;
   --meter-lo: #3fbf7f;
-  --display: 'Archivo Variable', 'Archivo', 'Arial Narrow', system-ui, sans-serif;
-  --body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --display: 'Archivo Variable', 'Archivo', 'IBM Plex Sans Arabic', 'Arial Narrow', system-ui, sans-serif;
+  --body: 'IBM Plex Sans', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'IBM Plex Sans Arabic', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --gut-l: max(16px, env(safe-area-inset-left, 0px));
   --gut-r: max(16px, env(safe-area-inset-right, 0px));
   color-scheme: dark;
@@ -102,8 +105,8 @@ header.top .wrap {
 }
 nav.links { display: flex; align-items: center; gap: 22px; font-size: .92rem }
 nav.links a { text-decoration: none; color: var(--muted); transition: color .2s }
-nav.links a:hover,
-nav.links a[aria-current] { color: var(--fg) }
+nav.links .navtxt:hover,
+nav.links .navtxt[aria-current] { color: var(--fg) }
 .lang {
   display: flex;
   border: 1px solid var(--line);
@@ -184,3 +187,20 @@ footer .wrap {
   *, *::before, *::after { animation: none !important; transition: none !important }
   html { scroll-behavior: auto }
 }
+
+/* RTL (Arabic) adjustments */
+[dir="rtl"] body { font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', system-ui, sans-serif }
+[dir="rtl"] .logo { font-family: var(--display); direction: ltr; unicode-bidi: isolate }
+[dir="rtl"] .lang { direction: ltr }
+[dir="rtl"] .tc,
+[dir="rtl"] .mon-bar,
+[dir="rtl"] .pill.onair,
+[dir="rtl"] .node small,
+[dir="rtl"] .tile span,
+[dir="rtl"] .meta span,
+[dir="rtl"] .chips > span { direction: ltr; unicode-bidi: isolate }
+[dir="rtl"] .chips > span .chip-label { direction: rtl }
+[dir="rtl"] .mail .addr { direction: ltr; unicode-bidi: isolate }
+[dir="rtl"] .live-note { flex-direction: row-reverse }
+[dir="rtl"] .btn.primary,
+[dir="rtl"] .btn.ghost { flex-direction: row-reverse }
