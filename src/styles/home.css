@@ -297,11 +297,19 @@
   box-shadow: 0 0 .35em var(--tally), 0 0 .9em rgba(255, 42, 42, .55);
   animation: tally 2.4s ease-in-out infinite;
 }
-.orbit .ray { stroke: var(--line); stroke-width: 1 }
+.orbit .ray {
+  stroke: var(--line);
+  stroke-width: 1;
+  transition: stroke .35s ease, stroke-width .35s ease;
+}
 .orbit .ray.hot { stroke: var(--amber); stroke-width: 1.6 }
-.orbit .pt { fill: var(--panel-2); stroke: var(--line) }
+.orbit .pt {
+  fill: var(--panel-2);
+  stroke: var(--line);
+  transition: fill .35s ease, stroke .35s ease, r .35s ease;
+}
 .orbit .pt.hot { fill: var(--amber); stroke: var(--amber) }
-.orbit .brand { color: var(--muted); transition: color .18s ease }
+.orbit .brand { color: var(--muted); transition: color .35s ease }
 .orbit .brand.hot { color: var(--amber) }
 .chips { display: flex; flex-wrap: wrap; gap: 6px }
 .chips > span {

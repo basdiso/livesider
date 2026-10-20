@@ -37,7 +37,7 @@ export const PLATFORMS: Platform[] = [
 export const ORBIT_KEYS = [
   'youtube', 'instagram', 'facebook', 'linkedin', 'tiktok',
   'x', 'twitch', 'vimeo', 'dailymotion', 'whatsapp',
-  'trendyol', 'amazon', 'etsy', 'shopify', 'ikas', 'ideasoft', 'ticimax',
+  'trendyol', 'amazon', 'etsy', 'shopify',
 ] as const;
 
 export const ORBIT_PLATFORMS = ORBIT_KEYS.map(
