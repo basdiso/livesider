@@ -126,7 +126,86 @@ nav.links .navtxt[aria-current] { color: var(--fg) }
   line-height: 1;
 }
 .lang a[aria-current="page"] { background: var(--fg); color: var(--bg) }
-@media (max-width: 820px) { nav.links .navtxt { display: none } }
+
+.hamburger { display: none }
+
+@media (max-width: 820px) {
+  .hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--fg);
+    position: relative;
+    z-index: 20;
+  }
+  .hamburger:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px }
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform .22s ease, opacity .22s ease;
+    transform-origin: center;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg) }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0 }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg) }
+
+  nav.links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 22px;
+    padding: calc(96px + env(safe-area-inset-top, 0px)) 28px calc(32px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform .32s cubic-bezier(.4, .0, .2, 1), opacity .22s ease;
+    pointer-events: none;
+    z-index: 15;
+  }
+  nav.links[data-open="true"] {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav.links .navtxt {
+    display: inline-block;
+    font-family: var(--display);
+    font-stretch: 85%;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    letter-spacing: -.01em;
+    color: var(--fg);
+    padding: 4px 0;
+  }
+  nav.links .navtxt[aria-current] { color: var(--amber) }
+  nav.links .lang {
+    margin-top: 20px;
+    font-size: .9rem;
+    padding: 5px;
+  }
+  nav.links .lang a { padding: 6px 14px }
+}
 
 footer { border-top: 1px solid var(--line) }
 footer .wrap {

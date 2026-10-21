@@ -15,11 +15,15 @@ const whyPath = paths.neden[locale];
 const faqPath = paths.sss[locale];
 const contactHash = pageKey === 'home' ? '#iletisim' : home + '#iletisim';
 const localeLabels: Record<Locale, string> = { tr: 'TR', en: 'EN', ar: 'AR' };
+const menuLabel = locale === 'tr' ? 'Menü' : locale === 'ar' ? 'القائمة' : 'Menu';
 ---
 <header class="top">
   <div class="wrap">
     <a class="logo" href={home} aria-label="Livesider">L<span class="i">ı<span class="dot" aria-hidden="true"></span></span>vesider</a>
-    <nav class="links" aria-label="Menu">
+    <button class="hamburger" type="button" aria-label={menuLabel} aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="site-nav" aria-label="Menu" data-open="false">
       <a class="navtxt" href={servicesHash}>{t(nav.services, locale)}</a>
       <a class="navtxt" href={showcasePath} aria-current={pageKey === 'ornekler' ? 'page' : undefined}>{t(nav.showcase, locale)}</a>
       <a class="navtxt" href={whyPath} aria-current={pageKey === 'neden' ? 'page' : undefined}>{t(nav.why, locale)}</a>
